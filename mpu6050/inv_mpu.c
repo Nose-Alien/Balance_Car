@@ -2872,6 +2872,7 @@ uint8_t atk_ms6050_dmp_init(void)
     ret += dmp_set_fifo_rate(DEFAULT_MPU_HZ);                   /* 设置DMP输出速率 */
     ret += mpu_set_dmp_state(1);                                /* 使能DMP */
     ret += atk_ms6050_run_self_test();                          /* 传感器自测试 */
+
     
     return ((ret == 0) ? 0 : 1);
 }
@@ -2917,6 +2918,7 @@ uint8_t atk_ms6050_run_self_test(void)
         gyro[2] = (long)(gyro[2] * sens);
         dmp_set_gyro_bias(gyro);
         mpu_get_accel_sens(&accel_sens);
+        accel_sens=0;//使其重力校准失效！
         accel[0] *= accel_sens;
         accel[1] *= accel_sens;
         accel[2] *= accel_sens;

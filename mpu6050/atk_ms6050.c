@@ -353,7 +353,7 @@ uint8_t atk_ms6050_init(void)
     atk_ms6050_sw_reset();                                                  /* ATK-MS050软件复位 */
     atk_ms6050_set_gyro_fsr(3);                                             /* 陀螺仪传感器，±2000dps */
     atk_ms6050_set_accel_fsr(0);                                            /* 加速度传感器，±2g */
-    atk_ms6050_set_rate(200);                                                /* 采样率，50Hz */
+    atk_ms6050_set_rate(200);                                                /* 采样率，200Hz */
     atk_ms6050_write_byte(ATK_MS6050_IIC_ADDR, MPU_INT_EN_REG, 0X00);       /* 关闭所有中断 */
     atk_ms6050_write_byte(ATK_MS6050_IIC_ADDR, MPU_USER_CTRL_REG, 0X00);    /* 关闭IIC主模式 */
     atk_ms6050_write_byte(ATK_MS6050_IIC_ADDR, MPU_FIFO_EN_REG, 0X00);      /* 关闭FIFO */
@@ -363,9 +363,10 @@ uint8_t atk_ms6050_init(void)
     {
         return ATK_MS6050_EID;
     }
+
     atk_ms6050_write_byte(ATK_MS6050_IIC_ADDR, MPU_PWR_MGMT1_REG, 0x01);    /* 设置CLKSEL，PLL X轴为参考 */
     atk_ms6050_write_byte(ATK_MS6050_IIC_ADDR, MPU_PWR_MGMT2_REG, 0x00);    /* 加速度与陀螺仪都工作 */
-    atk_ms6050_set_rate(200);                                                /* 采样率，50Hz */
+    atk_ms6050_set_rate(200);                                                /* 采样率，200Hz */
 
     return ATK_MS6050_EOK;
 }

@@ -9,8 +9,8 @@ extern "C"
 #include "main.h"
 #include "stm32f1xx_hal.h"
 
-#define BLC_KP  390
-#define BLC_KD  1.5
+#define BLC_KP  390//390
+#define BLC_KD  1.5//1.5
 #define SPD_KP  -130
 #define SPD_KI  -0.65
 #define TURN_KP   -20

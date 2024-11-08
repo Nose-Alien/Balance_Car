@@ -41,7 +41,7 @@ float velocity_KI = SPD_KI;
 
 float Turn_Kd = TURN_KD;//转向环KP、KD
 float Turn_KP = TURN_KP;
-
+float voltage;
 
 /**
   * @brief 主程序入口函数，初始化按键检测和运行逻辑
@@ -60,7 +60,6 @@ int user_main()
 
     HAL_TIM_Base_Start_IT(&htim4);
     while (1) {
-//        Set_Pwm(-10, -10);
         OLED_Clear(0x00);  // 清空OLED显示屏
         mode_oled(1);
         OLED_Refresh_Gram();  // 刷新OLED显示内容
@@ -73,15 +72,17 @@ int user_main()
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if (htim == &htim4) {  // 判断中断源是否为定时器htim2
+    if (htim == &htim4) {  // 判断中断源是否为定时器htim4
         static uint32_t TIM2_tick_ms = 0;  // 静态变量，跟踪时间滴答
         TIM2_tick_ms++;  // 每次中断时增加计数
         if (TIM2_tick_ms % 1 == 0) {
-        }
-        if (TIM2_tick_ms % 5 == 0) {
-//            button_ticks();  // 调用按钮状态更新函数
             atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
             atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
+        }
+        if (TIM2_tick_ms % 10 == 0) {
+//            button_ticks();  // 调用按钮状态更新函数
+//            atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
+//            atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
 
             Encoder_Left = Read_Encoder(2);                            //读取编码器的值
             Encoder_Right = -Read_Encoder(3);                          //读取编码器的值
@@ -96,7 +97,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
             Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
             Xianfu_Pwm();//===PWM限幅
-            Turn_Off(pit,12);//===检查角度以及电压是否正常
+            Turn_Off(pit,voltage);//===检查角度以及电压是否正常
             Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
         }
         if (TIM2_tick_ms % 500 == 0) {
@@ -104,16 +105,34 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         }
 
         if (TIM2_tick_ms % 1000 == 0) {
+
             TIM2_tick_ms = 0;     // 重置计时器计数
 
         }
     }
 }
 
+/**
+  * 函数功能: 按键外部中断回调函数
+  * 输入参数: GPIO_Pin：中断引脚
+  * 返 回 值: 无
+  * 说    明: 无
+  */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin==GPIO_PIN_5)
+    {
+        HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_5);
+    }
+
+
+}
+
 
 void mode_oled(uint8_t mode)
 {
-    float voltage = Get_Voltage();
+    voltage = Get_Voltage();
     switch (mode) {
         case 1: {
             OLED_DrawStr(28, line_1, "Bluetooth", MEDIUM, 0);
@@ -245,7 +264,7 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Turn_Off(float angle, float voltage)
 {
-    if (angle < -40 || angle > 40 || voltage < 11.1)     //电池电压低于11.1V关闭电机
+    if (angle < -40 || angle > 40 || voltage < 11)     //电池电压低于11V关闭电机
     {                                       //===倾角大于40度关闭电机
         Moto1 = 0;
         Moto2 = 0;
