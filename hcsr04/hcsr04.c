@@ -21,7 +21,7 @@
 //    HAL_TIM_Base_Stop(htim);
 //}
 
-uint16_t Hcsr04_Job()
+uint16_t hcrs04_get_distance()
 {
     uint16_t count;
     uint16_t distance;

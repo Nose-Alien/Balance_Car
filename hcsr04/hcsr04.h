@@ -23,7 +23,7 @@
 
 #define HTIM htim4//根据使用的定时器更改
 
-uint16_t Hcsr04_Job();
+uint16_t hcrs04_get_distance();
 //void user_delaynus_tim(uint32_t nus,TIM_HandleTypeDef *htim);
 
 #endif //HCSR04_GS90_HCSR04_H

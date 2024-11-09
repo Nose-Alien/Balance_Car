@@ -21,6 +21,8 @@ float pit, rol, yaw;
 int Encoder_Left, Encoder_Right;//左右编码器的脉冲计数
 int line_1 = 0, line_2 = 12, line_3 = 24,
         line_4 = 36, line_5 = 48, line_6 = 60;  // 显示列间距变量，控制显示内容的列间隔
+int distance = 0;  // 超声波测距结果
+int mode = 1;  // 模式选择变量
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
 #define SPEED_Z 85//偏航(左右)最大设定速度
@@ -61,8 +63,19 @@ int user_main()
     HAL_TIM_Base_Start_IT(&htim4);
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
-        mode_oled(1);
+        mode_oled(mode);    // 显示模式选择
         OLED_Refresh_Gram();  // 刷新OLED显示内容
+    }
+}
+/**
+  * @brief 外部中断回调函数，用于处理MPU6050的DMP数据
+  * @param GPIO_Pin 外部中断引脚
+  */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin==GPIO_PIN_5)
+    {
+        run();
     }
 }
 
@@ -76,29 +89,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         static uint32_t TIM2_tick_ms = 0;  // 静态变量，跟踪时间滴答
         TIM2_tick_ms++;  // 每次中断时增加计数
         if (TIM2_tick_ms % 1 == 0) {
-            atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
-            atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
         }
-        if (TIM2_tick_ms % 10 == 0) {
+        if (TIM2_tick_ms % 5 == 0) {
 //            button_ticks();  // 调用按钮状态更新函数
-//            atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
-//            atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
 
-            Encoder_Left = Read_Encoder(2);                            //读取编码器的值
-            Encoder_Right = -Read_Encoder(3);                          //读取编码器的值
-            if (Target_Speed > SPEED_Y) Target_Speed = SPEED_Y;  //速度环前后速度限幅
-            if (Target_Speed < -SPEED_Y) Target_Speed = -SPEED_Y;
-            if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
-            if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
-
-            Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
-            Velocity_Pwm = velocity(Encoder_Left, Encoder_Right, Target_Speed);//===速度环PID控制
-            Turn_Pwm = Turn_UP(gyr_z,Turn_Speed);//===转向环PID控制
-            Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
-            Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
-            Xianfu_Pwm();//===PWM限幅
-            Turn_Off(pit,voltage);//===检查角度以及电压是否正常
-            Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
         }
         if (TIM2_tick_ms % 500 == 0) {
             HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
@@ -112,23 +106,28 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
 }
 
-/**
-  * 函数功能: 按键外部中断回调函数
-  * 输入参数: GPIO_Pin：中断引脚
-  * 返 回 值: 无
-  * 说    明: 无
-  */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+void run(void)
 {
-    if(GPIO_Pin==GPIO_PIN_5)
-    {
-        HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_5);
-    }
+    mode_job(mode); //工作模式
+    atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
+    atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
 
+    Encoder_Left = Read_Encoder(2);                            //读取编码器的值
+    Encoder_Right = -Read_Encoder(3);                          //读取编码器的值
+    if (Target_Speed > SPEED_Y) Target_Speed = SPEED_Y;  //速度环前后速度限幅
+    if (Target_Speed < -SPEED_Y) Target_Speed = -SPEED_Y;
+    if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
+    if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
 
+    Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
+    Velocity_Pwm = velocity(Encoder_Left, Encoder_Right, Target_Speed);//===速度环PID控制
+    Turn_Pwm = Turn_UP(gyr_z,Turn_Speed);//===转向环PID控制
+    Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
+    Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
+    Xianfu_Pwm();//===PWM限幅
+    Turn_Off(pit,voltage);//===检查角度以及电压是否正常
+    Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
 }
-
 
 void mode_oled(uint8_t mode)
 {
@@ -141,14 +140,12 @@ void mode_oled(uint8_t mode)
             OLED_DrawNum0(12, line_2, (int) voltage, MEDIUM, 0);
             OLED_DrawChar(28, line_2, '.', MEDIUM, 0);
             OLED_DrawNum(32, line_2, (uint16_t) (voltage * 10) % 10, MEDIUM, 0);  // 第一位小数
-//            OLED_DrawNum(40, line_2, Hcsr04_Job(), MEDIUM, 0);
+
             mpu6050_oled();
             Encoder_oled();
         }
             break;
     }
-//    OLED_DrawNum(0, 12, Hcsr04_Job(), MEDIUM, 0);
-
 }
 
 void mpu6050_oled()
@@ -167,6 +164,7 @@ void Encoder_oled()
     OLED_ShowSignedNum(72, line_2, Encoder_Left, MEDIUM, 0);
     OLED_DrawStr(56, line_3, "R:", MEDIUM, 0);
     OLED_ShowSignedNum(72, line_3, Encoder_Right, MEDIUM, 0);
+    OLED_DrawNum(56, line_4, distance, MEDIUM, 0);
 }
 
 /**************************************************************************
@@ -216,7 +214,7 @@ int velocity(int encoder_left,int encoder_right,int Target_Speed)
 {
     static float Velocity,Encoder_Least,Encoder;
     static float Encoder_Integral;
-    Encoder_Least =(Encoder_Left+Encoder_Right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
+    Encoder_Least =(encoder_left+encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
     Encoder *= 0.8;		                                                //===一阶低通滤波器
     Encoder += Encoder_Least*0.2;	                                    //===一阶低通滤波器
     Encoder_Integral +=Encoder;                                       //===积分出位移 积分时间：5ms
@@ -271,4 +269,55 @@ void Turn_Off(float angle, float voltage)
     }
 }
 
+void mode_job(int mode)
+{
+    static uint8_t SR04_Counter =0;
+    static uint16_t Count=0;
+    switch(mode)
+    {
 
+//        case 1: //蓝牙模式
+//            if((Fore==0)&&(Back==0))Target_Speed=0;//未接受到前进后退指令-->速度清零，稳在原地
+//            if(Fore==1)Target_Speed+=1;//前进1标志位拉高-->需要前进
+//            if(Back==1)Target_Speed-=1;
+//            /*左右*/
+//            if((Left==0)&&(Right==0))Turn_Speed=0;
+//            if(Left==1)Turn_Speed-=10;//左转
+//            if(Right==1)Turn_Speed+=10;//右转
+//            break;
+
+//        case 2:  //NRF24L01模式
+//            if(Buf[3]==0) Target_Speed=0;
+//            if(Buf[3]==1) Target_Speed+=1;//前进
+//            if(Buf[3]==2) Target_Speed-=1;//后退
+//
+//            if(Buf[2]==0) Turn_Speed=0;
+//            if(Buf[2]==1) Turn_Speed-=10;//左转
+//            if(Buf[2]==2) Turn_Speed+=10;//右转
+//            break;
+
+//        case 3://避障模式
+//            SR04_Counter++;
+//            if(SR04_Counter>=20){									         //100ms读取一次超声波的数据
+//                SR04_Counter=0;
+////                Start_Ranging();												 //读取超声波的值
+//            }
+//            if(SR04_Distance<=70){
+//                Count++;
+//                Target_Speed=0;
+//                Turn_Speed=0;
+//                if(Count>=200){
+//                    Target_Speed=0;
+//                    Turn_Speed=60;
+//                    if(Count>=400)
+//                    {
+//                        Count=0;
+//                    }
+//                }
+//            }
+//            else{
+//                Target_Speed=50,Turn_Speed=0;
+//            }
+//            break;
+    }
+}

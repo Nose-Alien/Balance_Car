@@ -25,6 +25,8 @@ int balance_UP(float Angle,float Mechanical_balance,float Gyro);
 int Turn_UP(int gyro_Z, int RC);
 void Turn_Off(float angle, float voltage);
 void Xianfu_Pwm(void);
+void run(void);
+void mode_job(int mode);
 
 #ifdef __cplusplus
 }
