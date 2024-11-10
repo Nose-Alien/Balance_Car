@@ -73,16 +73,16 @@ int user_main()
             distance_job = 0;
         }
 
-        if (obstacle_job == 1) {
-            Target_Speed = -20;
-            Turn_Speed = -2;
-            delay_ms(500);
-            Target_Speed = 0;
-            Turn_Speed = -80;
-            obstacle_job = 0;
-        } else {
-            Target_Speed = 10, Turn_Speed = -2;
-        }
+//        if (obstacle_job == 1) {
+//            Target_Speed = -20;
+//            Turn_Speed = -2;
+//            delay_ms(500);
+//            Target_Speed = 0;
+//            Turn_Speed = -80;
+//            obstacle_job = 0;
+//        } else {
+//            Target_Speed = 10, Turn_Speed = -2;
+//        }
         OLED_Refresh_Gram();  // 刷新OLED显示内容
     }
 }
@@ -279,23 +279,23 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Turn_Off(float angle, float voltage)
 {
-//    if (angle < -40 || angle > 40 || voltage < 10)     //电池电压低于11V关闭电机
-//    {                                       //===倾角大于40度关闭电机
-//        Moto1 = 0;
-//        Moto2 = 0;
-//    }
-    if (angle < -60) {
-        Moto1 = -7000;
-        Moto2 = -7000;
-    }
-    if (angle > 60) {
-        Moto1 = 7000;
-        Moto2 = 7000;
-    }
-    if (voltage < 10) {
+    if (angle < -40 || angle > 70 || voltage < 10)     //电池电压低于11V关闭电机
+    {                                       //===倾角大于40度关闭电机
         Moto1 = 0;
         Moto2 = 0;
     }
+//    if (angle < -60) {
+//        Moto1 = -7000;
+//        Moto2 = -7000;
+//    }
+//    if (angle > 60) {
+//        Moto1 = 7000;
+//        Moto2 = 7000;
+//    }
+//    if (voltage < 10) {
+//        Moto1 = 0;
+//        Moto2 = 0;
+//    }
 }
 
 void mode_job(int mode)
