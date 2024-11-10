@@ -14,6 +14,7 @@
 #include "motor.h"
 #include "atk_ms6050.h"
 #include "inv_mpu.h"
+
 //#include "binary_tasker_drv.h"
 //#include "binary_tasker_port.h"
 double Moto1 = 0, Moto2 = 0;///计算出来的最终赋给电机的PWM
@@ -22,6 +23,7 @@ int Encoder_Left, Encoder_Right;//左右编码器的脉冲计数
 int line_1 = 0, line_2 = 12, line_3 = 24,
         line_4 = 36, line_5 = 48, line_6 = 60;  // 显示列间距变量，控制显示内容的列间隔
 int distance = 0;  // 超声波测距结果
+int8_t distance_job = 0; //电池电压
 int mode = 1;  // 模式选择变量
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
@@ -33,7 +35,7 @@ int16_t gyr_x, gyr_y, gyr_z;
 
 float Mechanical_angle = 0;
 float Target_Speed = 0;    //期望速度（俯仰）。用于控制小车前进后退及其速度。
-float Turn_Speed = 0;        //期望速度（偏航）
+float Turn_Speed = -2;        //期望速度（偏航）
 
 float balance_KP = BLC_KP;     // 小车直立环PD参数
 float balance_KD = BLC_KD;
@@ -43,7 +45,8 @@ float velocity_KI = SPD_KI;
 
 float Turn_Kd = TURN_KD;//转向环KP、KD
 float Turn_KP = TURN_KP;
-float voltage;
+float voltage; //电池电压
+
 
 /**
   * @brief 主程序入口函数，初始化按键检测和运行逻辑
@@ -64,47 +67,26 @@ int user_main()
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
         mode_oled(mode);    // 显示模式选择
+//        Start_Ranging();  // 启动超声波测距
+        if (distance_job == 1) {
+            distance = hcrs04_get_distance();
+            distance_job = 0;
+        }
         OLED_Refresh_Gram();  // 刷新OLED显示内容
     }
 }
+
 /**
-  * @brief 外部中断回调函数，用于处理MPU6050的DMP数据
+  * @brief 外部中断回调函数
   * @param GPIO_Pin 外部中断引脚
   */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin==GPIO_PIN_5)
-    {
+    if (GPIO_Pin == GPIO_PIN_5) {
         run();
     }
 }
 
-/**
-  * @brief 定时器中断回调函数，用于处理周期性任务
-  * @param htim 定时器句柄指针
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-    if (htim == &htim4) {  // 判断中断源是否为定时器htim4
-        static uint32_t TIM2_tick_ms = 0;  // 静态变量，跟踪时间滴答
-        TIM2_tick_ms++;  // 每次中断时增加计数
-        if (TIM2_tick_ms % 1 == 0) {
-        }
-        if (TIM2_tick_ms % 5 == 0) {
-//            button_ticks();  // 调用按钮状态更新函数
-
-        }
-        if (TIM2_tick_ms % 500 == 0) {
-            HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-        }
-
-        if (TIM2_tick_ms % 1000 == 0) {
-
-            TIM2_tick_ms = 0;     // 重置计时器计数
-
-        }
-    }
-}
 
 void run(void)
 {
@@ -121,12 +103,25 @@ void run(void)
 
     Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
     Velocity_Pwm = velocity(Encoder_Left, Encoder_Right, Target_Speed);//===速度环PID控制
-    Turn_Pwm = Turn_UP(gyr_z,Turn_Speed);//===转向环PID控制
+    Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
     Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
     Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
     Xianfu_Pwm();//===PWM限幅
-    Turn_Off(pit,voltage);//===检查角度以及电压是否正常
+    Turn_Off(pit, voltage);//===检查角度以及电压是否正常
     Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
+
+    static uint32_t tick_10ms = 0;  // 静态变量，跟踪时间滴答
+    tick_10ms++;  // 每次中断时增加计数
+
+    if (tick_10ms % 20 == 0) { //100ms执行一次
+        distance_job = distance_job == 0 ? 1 : 0;
+    }
+    if (tick_10ms % 50 == 0) { //500ms执行一次
+        HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+    }
+    if (tick_10ms % 100 == 0) { //1s执行一次
+        tick_10ms = 0;     // 重置计时器计数
+    }
 }
 
 void mode_oled(uint8_t mode)
@@ -175,7 +170,6 @@ void Encoder_oled()
 int16_t Read_Encoder(uint8_t X)
 {
     int16_t Speed_Value = 0;
-
     switch (X) {
         case 2:
             Speed_Value = __HAL_TIM_GET_COUNTER(&htim2); // 读取TIM2的计数值
@@ -191,17 +185,18 @@ int16_t Read_Encoder(uint8_t X)
 
     return Speed_Value;
 }
+
 /**************************************************************************
 函数功能：直立PD控制
 入口参数：角度、机械平衡角度（机械中值）、角速度
 返回  值：直立控制PWM
 **************************************************************************/
-int balance_UP(float Angle,float Mechanical_balance,float Gyro)
+int balance_UP(float Angle, float Mechanical_balance, float Gyro)
 {
     float Bias;
     int balance;
-    Bias=Angle-Mechanical_balance;    							 //===求出平衡的角度中值和机械相关
-    balance=balance_KP*Bias+balance_KD*Gyro;  //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数
+    Bias = Angle - Mechanical_balance;                                 //===求出平衡的角度中值和机械相关
+    balance = balance_KP * Bias + balance_KD * Gyro;  //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数
     return balance;
 }
 
@@ -210,21 +205,22 @@ int balance_UP(float Angle,float Mechanical_balance,float Gyro)
 入口参数：电机编码器的值
 返回  值：速度控制PWM
 **************************************************************************/
-int velocity(int encoder_left,int encoder_right,int Target_Speed)
+int velocity(int encoder_left, int encoder_right, int Target_Speed)
 {
-    static float Velocity,Encoder_Least,Encoder;
+    static float Velocity, Encoder_Least, Encoder;
     static float Encoder_Integral;
-    Encoder_Least =(encoder_left+encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
-    Encoder *= 0.8;		                                                //===一阶低通滤波器
-    Encoder += Encoder_Least*0.2;	                                    //===一阶低通滤波器
-    Encoder_Integral +=Encoder;                                       //===积分出位移 积分时间：5ms
-    Encoder_Integral=Encoder_Integral - Target_Speed;                       //===接收遥控器数据，控制前进后退
-    if(Encoder_Integral>10000)  	Encoder_Integral=10000;             //===积分限幅
-    if(Encoder_Integral<-10000)		Encoder_Integral=-10000;            //===积分限幅
-    Velocity=Encoder*velocity_KP+Encoder_Integral*velocity_KI;        //===速度控制
-    if(pit<-40||pit>40) 			Encoder_Integral=0;     						//===电机关闭后清除积分
+    Encoder_Least = (encoder_left + encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
+    Encoder *= 0.8;                                                        //===一阶低通滤波器
+    Encoder += Encoder_Least * 0.2;                                        //===一阶低通滤波器
+    Encoder_Integral += Encoder;                                       //===积分出位移 积分时间：5ms
+    Encoder_Integral = Encoder_Integral - Target_Speed;                       //===接收遥控器数据，控制前进后退
+    if (Encoder_Integral > 10000) Encoder_Integral = 10000;             //===积分限幅
+    if (Encoder_Integral < -10000) Encoder_Integral = -10000;            //===积分限幅
+    Velocity = Encoder * velocity_KP + Encoder_Integral * velocity_KI;        //===速度控制
+    if (pit < -40 || pit > 40) Encoder_Integral = 0;                            //===电机关闭后清除积分
     return Velocity;
 }
+
 /**************************************************************************
 函数功能：转向PD控制
 入口参数：电机编码器的值、Z轴角速度
@@ -234,10 +230,9 @@ int velocity(int encoder_left,int encoder_right,int Target_Speed)
 int Turn_UP(int gyro_Z, int RC)
 {
     int PWM_out;
-
-    if(RC==0)Turn_Kd=TURN_KD;//若无左右转向指令，则开启转向约束
-    else Turn_Kd=0;//若左右转向指令接收到，则去掉转向约束
-    PWM_out=Turn_Kd*gyro_Z+Turn_KP*RC;
+    if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
+    else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+    PWM_out = Turn_Kd * gyro_Z + Turn_KP * RC;
     return PWM_out;
 }
 
@@ -271,10 +266,9 @@ void Turn_Off(float angle, float voltage)
 
 void mode_job(int mode)
 {
-    static uint8_t SR04_Counter =0;
-    static uint16_t Count=0;
-    switch(mode)
-    {
+    static uint8_t SR04_Counter = 0;
+    static uint16_t Count = 0;
+    switch (mode) {
 
 //        case 1: //蓝牙模式
 //            if((Fore==0)&&(Back==0))Target_Speed=0;//未接受到前进后退指令-->速度清零，稳在原地

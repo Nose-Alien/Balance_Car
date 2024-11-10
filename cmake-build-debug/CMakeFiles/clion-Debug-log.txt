@@ -14,6 +14,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done (2.0s)
+-- Configuring done (2.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/cmake-build-debug
