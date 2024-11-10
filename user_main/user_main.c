@@ -23,8 +23,9 @@ int Encoder_Left, Encoder_Right;//左右编码器的脉冲计数
 int line_1 = 0, line_2 = 12, line_3 = 24,
         line_4 = 36, line_5 = 48, line_6 = 60;  // 显示列间距变量，控制显示内容的列间隔
 int distance = 0;  // 超声波测距结果
-int8_t distance_job = 0; //电池电压
-int mode = 1;  // 模式选择变量
+int8_t distance_job = 0; //超声波标志位
+int8_t obstacle_job = 0; //避障标志位
+int mode = 3;  // 模式选择变量
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
 #define SPEED_Z 85//偏航(左右)最大设定速度
@@ -67,10 +68,20 @@ int user_main()
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
         mode_oled(mode);    // 显示模式选择
-//        Start_Ranging();  // 启动超声波测距
         if (distance_job == 1) {
             distance = hcrs04_get_distance();
             distance_job = 0;
+        }
+
+        if (obstacle_job == 1) {
+            Target_Speed = -20;
+            Turn_Speed = -2;
+            delay_ms(500);
+            Target_Speed = 0;
+            Turn_Speed = -80;
+            obstacle_job = 0;
+        } else {
+            Target_Speed = 10, Turn_Speed = -2;
         }
         OLED_Refresh_Gram();  // 刷新OLED显示内容
     }
@@ -82,13 +93,13 @@ int user_main()
   */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == GPIO_PIN_5) {
+    if (GPIO_Pin == GPIO_PIN_5) {//mpu6050，10ms发一次数据
         run();
     }
 }
 
 
-void run(void)
+void run(void)//10ms工作一次
 {
     mode_job(mode); //工作模式
     atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
@@ -130,6 +141,17 @@ void mode_oled(uint8_t mode)
     switch (mode) {
         case 1: {
             OLED_DrawStr(28, line_1, "Bluetooth", MEDIUM, 0);
+            OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
+            OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
+            OLED_DrawNum0(12, line_2, (int) voltage, MEDIUM, 0);
+            OLED_DrawChar(28, line_2, '.', MEDIUM, 0);
+            OLED_DrawNum(32, line_2, (uint16_t) (voltage * 10) % 10, MEDIUM, 0);  // 第一位小数
+
+            mpu6050_oled();
+            Encoder_oled();
+        }
+        case 3: {
+            OLED_DrawStr(28, line_1, "Obstacle", MEDIUM, 0);
             OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
             OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
             OLED_DrawNum0(12, line_2, (int) voltage, MEDIUM, 0);
@@ -257,8 +279,20 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Turn_Off(float angle, float voltage)
 {
-    if (angle < -40 || angle > 40 || voltage < 11)     //电池电压低于11V关闭电机
-    {                                       //===倾角大于40度关闭电机
+//    if (angle < -40 || angle > 40 || voltage < 10)     //电池电压低于11V关闭电机
+//    {                                       //===倾角大于40度关闭电机
+//        Moto1 = 0;
+//        Moto2 = 0;
+//    }
+    if (angle < -60) {
+        Moto1 = -7000;
+        Moto2 = -7000;
+    }
+    if (angle > 60) {
+        Moto1 = 7000;
+        Moto2 = 7000;
+    }
+    if (voltage < 10) {
         Moto1 = 0;
         Moto2 = 0;
     }
@@ -267,7 +301,7 @@ void Turn_Off(float angle, float voltage)
 void mode_job(int mode)
 {
     static uint8_t SR04_Counter = 0;
-    static uint16_t Count = 0;
+    static uint32_t Count = 0;
     switch (mode) {
 
 //        case 1: //蓝牙模式
@@ -290,28 +324,10 @@ void mode_job(int mode)
 //            if(Buf[2]==2) Turn_Speed+=10;//右转
 //            break;
 
-//        case 3://避障模式
-//            SR04_Counter++;
-//            if(SR04_Counter>=20){									         //100ms读取一次超声波的数据
-//                SR04_Counter=0;
-////                Start_Ranging();												 //读取超声波的值
-//            }
-//            if(SR04_Distance<=70){
-//                Count++;
-//                Target_Speed=0;
-//                Turn_Speed=0;
-//                if(Count>=200){
-//                    Target_Speed=0;
-//                    Turn_Speed=60;
-//                    if(Count>=400)
-//                    {
-//                        Count=0;
-//                    }
-//                }
-//            }
-//            else{
-//                Target_Speed=50,Turn_Speed=0;
-//            }
-//            break;
+        case 3://避障模式
+            if (distance <= 50) {
+                obstacle_job = obstacle_job == 0 ? 1 : 0;
+            }
+            break;
     }
 }
