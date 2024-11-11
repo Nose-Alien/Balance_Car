@@ -25,7 +25,7 @@ int line_1 = 0, line_2 = 12, line_3 = 24,
 int distance = 0;  // 超声波测距结果
 int8_t distance_job = 0; //超声波标志位
 int8_t obstacle_job = 0; //避障标志位
-int mode = 3;  // 模式选择变量
+int mode = 1;  // 模式选择变量
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
 #define SPEED_Z 85//偏航(左右)最大设定速度
@@ -73,16 +73,16 @@ int user_main()
             distance_job = 0;
         }
 
-//        if (obstacle_job == 1) {
-//            Target_Speed = -20;
-//            Turn_Speed = -2;
-//            delay_ms(500);
-//            Target_Speed = 0;
-//            Turn_Speed = -80;
-//            obstacle_job = 0;
-//        } else {
-//            Target_Speed = 10, Turn_Speed = -2;
-//        }
+        if (obstacle_job == 1 && mode==3) {
+            Target_Speed = -30;
+            Turn_Speed = -2;
+            delay_ms(500);
+            Target_Speed = 0;
+            Turn_Speed = -80;
+            obstacle_job=0;
+        } else if(mode==3){
+            Target_Speed = 10, Turn_Speed = -2;
+        }
         OLED_Refresh_Gram();  // 刷新OLED显示内容
     }
 }
@@ -98,33 +98,34 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     }
 }
 
-
 void run(void)//10ms工作一次
 {
-    mode_job(mode); //工作模式
-    atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
-    atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
-
-    Encoder_Left = Read_Encoder(2);                            //读取编码器的值
-    Encoder_Right = -Read_Encoder(3);                          //读取编码器的值
-    if (Target_Speed > SPEED_Y) Target_Speed = SPEED_Y;  //速度环前后速度限幅
-    if (Target_Speed < -SPEED_Y) Target_Speed = -SPEED_Y;
-    if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
-    if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
-
-    Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
-    Velocity_Pwm = velocity(Encoder_Left, Encoder_Right, Target_Speed);//===速度环PID控制
-    Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
-    Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
-    Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
-    Xianfu_Pwm();//===PWM限幅
-    Turn_Off(pit, voltage);//===检查角度以及电压是否正常
-    Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
-
     static uint32_t tick_10ms = 0;  // 静态变量，跟踪时间滴答
     tick_10ms++;  // 每次中断时增加计数
 
-    if (tick_10ms % 20 == 0) { //100ms执行一次
+    if (tick_10ms % 1 == 0) { //10ms执行一次
+        mode_job(mode); //工作模式
+        atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
+        atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
+
+        Encoder_Left = Read_Encoder(2);                            //读取编码器的值
+        Encoder_Right = -Read_Encoder(3);                          //读取编码器的值
+        if (Target_Speed > SPEED_Y) Target_Speed = SPEED_Y;  //速度环前后速度限幅
+        if (Target_Speed < -SPEED_Y) Target_Speed = -SPEED_Y;
+        if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
+        if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
+
+        Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
+        Velocity_Pwm = velocity(Encoder_Left, Encoder_Right, Target_Speed);//===速度环PID控制
+        Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
+        Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
+        Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
+        Xianfu_Pwm();//===PWM限幅
+        Turn_Off(pit, voltage);//===检查角度以及电压是否正常
+        Set_Pwm(Moto1, Moto2);//===赋值给PWM寄存器
+    }
+
+    if (tick_10ms % 20 == 0) { //200ms执行一次
         distance_job = distance_job == 0 ? 1 : 0;
     }
     if (tick_10ms % 50 == 0) { //500ms执行一次
@@ -149,6 +150,7 @@ void mode_oled(uint8_t mode)
 
             mpu6050_oled();
             Encoder_oled();
+            break;
         }
         case 3: {
             OLED_DrawStr(28, line_1, "Obstacle", MEDIUM, 0);
@@ -160,8 +162,11 @@ void mode_oled(uint8_t mode)
 
             mpu6050_oled();
             Encoder_oled();
-        }
             break;
+        }
+        default: {
+            break;
+        }
     }
 }
 
@@ -284,18 +289,6 @@ void Turn_Off(float angle, float voltage)
         Moto1 = 0;
         Moto2 = 0;
     }
-//    if (angle < -60) {
-//        Moto1 = -7000;
-//        Moto2 = -7000;
-//    }
-//    if (angle > 60) {
-//        Moto1 = 7000;
-//        Moto2 = 7000;
-//    }
-//    if (voltage < 10) {
-//        Moto1 = 0;
-//        Moto2 = 0;
-//    }
 }
 
 void mode_job(int mode)
@@ -303,17 +296,9 @@ void mode_job(int mode)
     static uint8_t SR04_Counter = 0;
     static uint32_t Count = 0;
     switch (mode) {
-
-//        case 1: //蓝牙模式
-//            if((Fore==0)&&(Back==0))Target_Speed=0;//未接受到前进后退指令-->速度清零，稳在原地
-//            if(Fore==1)Target_Speed+=1;//前进1标志位拉高-->需要前进
-//            if(Back==1)Target_Speed-=1;
-//            /*左右*/
-//            if((Left==0)&&(Right==0))Turn_Speed=0;
-//            if(Left==1)Turn_Speed-=10;//左转
-//            if(Right==1)Turn_Speed+=10;//右转
-//            break;
-
+        case 1:{//蓝牙模式
+        }
+            break;
 //        case 2:  //NRF24L01模式
 //            if(Buf[3]==0) Target_Speed=0;
 //            if(Buf[3]==1) Target_Speed+=1;//前进
@@ -324,10 +309,12 @@ void mode_job(int mode)
 //            if(Buf[2]==2) Turn_Speed+=10;//右转
 //            break;
 
-        case 3://避障模式
-            if (distance <= 50) {
-                obstacle_job = obstacle_job == 0 ? 1 : 0;
-            }
+        case 3: {//避障模式
+            if (distance <= 30) { obstacle_job = obstacle_job == 0 ? 1 : 0; }
             break;
+        }
+        default: {
+            break;
+        }
     }
 }
