@@ -101,7 +101,7 @@ void run(void)//10ms工作一次
     tick_10ms++;  // 每次中断时增加计数
 
     if (tick_10ms % 1 == 0) { //10ms执行一次
-        button_ticks();
+        button_ticks();//更新按键状态
         mode_job(mode); //工作模式
         atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
         atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
