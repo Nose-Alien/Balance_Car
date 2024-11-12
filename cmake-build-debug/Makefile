@@ -856,6 +856,54 @@ hcsr04/hcsr04.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.s
 .PHONY : hcsr04/hcsr04.c.s
 
+keypad/MultiButton/multi_button.obj: keypad/MultiButton/multi_button.c.obj
+.PHONY : keypad/MultiButton/multi_button.obj
+
+# target to build an object file
+keypad/MultiButton/multi_button.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj
+.PHONY : keypad/MultiButton/multi_button.c.obj
+
+keypad/MultiButton/multi_button.i: keypad/MultiButton/multi_button.c.i
+.PHONY : keypad/MultiButton/multi_button.i
+
+# target to preprocess a source file
+keypad/MultiButton/multi_button.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.i
+.PHONY : keypad/MultiButton/multi_button.c.i
+
+keypad/MultiButton/multi_button.s: keypad/MultiButton/multi_button.c.s
+.PHONY : keypad/MultiButton/multi_button.s
+
+# target to generate assembly for a file
+keypad/MultiButton/multi_button.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.s
+.PHONY : keypad/MultiButton/multi_button.c.s
+
+keypad/button_port/button_port.obj: keypad/button_port/button_port.c.obj
+.PHONY : keypad/button_port/button_port.obj
+
+# target to build an object file
+keypad/button_port/button_port.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj
+.PHONY : keypad/button_port/button_port.c.obj
+
+keypad/button_port/button_port.i: keypad/button_port/button_port.c.i
+.PHONY : keypad/button_port/button_port.i
+
+# target to preprocess a source file
+keypad/button_port/button_port.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.i
+.PHONY : keypad/button_port/button_port.c.i
+
+keypad/button_port/button_port.s: keypad/button_port/button_port.c.s
+.PHONY : keypad/button_port/button_port.s
+
+# target to generate assembly for a file
+keypad/button_port/button_port.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.s
+.PHONY : keypad/button_port/button_port.c.s
+
 mpu6050/atk_ms6050.obj: mpu6050/atk_ms6050.c.obj
 .PHONY : mpu6050/atk_ms6050.obj
 
@@ -1052,6 +1100,12 @@ help:
 	@echo ... hcsr04/hcsr04.obj
 	@echo ... hcsr04/hcsr04.i
 	@echo ... hcsr04/hcsr04.s
+	@echo ... keypad/MultiButton/multi_button.obj
+	@echo ... keypad/MultiButton/multi_button.i
+	@echo ... keypad/MultiButton/multi_button.s
+	@echo ... keypad/button_port/button_port.obj
+	@echo ... keypad/button_port/button_port.i
+	@echo ... keypad/button_port/button_port.s
 	@echo ... mpu6050/atk_ms6050.obj
 	@echo ... mpu6050/atk_ms6050.i
 	@echo ... mpu6050/atk_ms6050.s

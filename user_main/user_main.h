@@ -8,7 +8,16 @@ extern "C"
 #endif
 #include "main.h"
 #include "stm32f1xx_hal.h"
-
+#include "driver_ssd1306.h"
+#include "delay.h"
+#include "adc.h"
+#include "tim.h"
+#include "hcsr04.h"
+#include "motor.h"
+#include "atk_ms6050.h"
+#include "inv_mpu.h"
+#include "multi_button.h"
+#include "button_port.h"
 #define BLC_KP  390//390
 #define BLC_KD  1.5//1.5
 #define SPD_KP  -130
@@ -27,7 +36,11 @@ void Turn_Off(float angle, float voltage);
 void Xianfu_Pwm(void);
 void run(void);
 void mode_job(int mode);
-
+void Run_Enter();
+void Run_Key();
+struct key {
+    uint16_t keyEvent; // 按键事件标志
+};
 #ifdef __cplusplus
 }
 #endif

@@ -6,14 +6,6 @@
   */
 
 #include "user_main.h"
-#include "driver_ssd1306.h"
-#include "delay.h"
-#include "adc.h"
-#include "tim.h"
-#include "hcsr04.h"
-#include "motor.h"
-#include "atk_ms6050.h"
-#include "inv_mpu.h"
 
 //#include "binary_tasker_drv.h"
 //#include "binary_tasker_port.h"
@@ -65,22 +57,27 @@ int user_main()
     __HAL_TIM_MOE_ENABLE(&htim1);
 
     HAL_TIM_Base_Start_IT(&htim4);
+    TouchKey_Init();  // 初始化触摸按键功能
+    Run_Enter();
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
         mode_oled(mode);    // 显示模式选择
+        Run_Key();
+        Target_Speed = 0;
+        Turn_Speed = -2;
         if (distance_job == 1) {
             distance = hcrs04_get_distance();
             distance_job = 0;
         }
 
-        if (obstacle_job == 1 && mode==3) {
+        if (obstacle_job == 1 && mode == 3) {
             Target_Speed = -30;
             Turn_Speed = -2;
             delay_ms(500);
             Target_Speed = 0;
             Turn_Speed = -80;
-            obstacle_job=0;
-        } else if(mode==3){
+            obstacle_job = 0;
+        } else if (obstacle_job == 0 && mode == 3) {
             Target_Speed = 10, Turn_Speed = -2;
         }
         OLED_Refresh_Gram();  // 刷新OLED显示内容
@@ -104,6 +101,7 @@ void run(void)//10ms工作一次
     tick_10ms++;  // 每次中断时增加计数
 
     if (tick_10ms % 1 == 0) { //10ms执行一次
+        button_ticks();
         mode_job(mode); //工作模式
         atk_ms6050_dmp_get_data(&pit, &rol, &yaw);
         atk_ms6050_get_gyroscope(&gyr_x, &gyr_y, &gyr_z);
@@ -296,7 +294,7 @@ void mode_job(int mode)
     static uint8_t SR04_Counter = 0;
     static uint32_t Count = 0;
     switch (mode) {
-        case 1:{//蓝牙模式
+        case 1: {//蓝牙模式
         }
             break;
 //        case 2:  //NRF24L01模式
@@ -316,5 +314,61 @@ void mode_job(int mode)
         default: {
             break;
         }
+    }
+}
+
+// 结构体变量，存储运行时的按键事件信息
+struct key event = {
+        .keyEvent = 0,  // 按键事件标志，默认为0表示无事件
+};
+
+// 按键事件处理函数
+static void Run_KeyEventHandler(void *button)
+{
+    // 获取触摸按键的ID
+    TouchKey_NameTypedef name = (((Button *) button)->button_id);
+
+    // 根据按键ID触发对应的按键事件
+    switch (name) {
+        case TOUCH_KEY_1: {  // 按键1被按下，设置run.keyEvent为1
+            event.keyEvent = 1;
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+}
+
+// 进入运行模式时绑定按键事件处理函数
+void Run_Enter()
+{
+    // 为每个触摸按键绑定单击事件，处理函数为Run_KeyEventHandler
+    button_attach(&TouchKey[TOUCH_KEY_1], SINGLE_CLICK, Run_KeyEventHandler);
+}
+
+// 退出运行模式时解绑按键事件处理函数
+void Run_Exit()
+{
+    // 解绑所有按键的事件处理函数
+    button_detachAll(&TouchKey[TOUCH_KEY_1]);;
+}
+void Run_Key()
+{
+    enum {KEY_EVENT_1 = 1};
+
+    // 检查是否有按键事件发生
+    if (event.keyEvent != 0) {
+        switch (event.keyEvent) {
+            case KEY_EVENT_1: {
+//                HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
+                mode = mode == 1 ? 3 : 1;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+        event.keyEvent = 0;// 重置按键事件标志
     }
 }

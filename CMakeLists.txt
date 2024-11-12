@@ -88,6 +88,9 @@ target_sources(${PROJECT_NAME}.elf
         ${CMAKE_CURRENT_SOURCE_DIR}/mpu6050/inv_mpu.c
         ${CMAKE_CURRENT_SOURCE_DIR}/mpu6050/inv_mpu_dmp_motion_driver.c
 
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton/multi_button.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port/button_port.c
+
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/user_main/user_main.h
         #${CMAKE_CURRENT_SOURCE_DIR}/OLED/Inc/driver_i2c.h
@@ -106,6 +109,9 @@ target_sources(${PROJECT_NAME}.elf
         ${CMAKE_CURRENT_SOURCE_DIR}/mpu6050/inv_mpu.h
         ${CMAKE_CURRENT_SOURCE_DIR}/mpu6050/inv_mpu_dmp_motion_driver.h
 
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton/multi_button.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port/button_port.h
+
 )
 
 target_include_directories(${PROJECT_NAME}.elf
@@ -119,6 +125,9 @@ target_include_directories(${PROJECT_NAME}.elf
         ${CMAKE_CURRENT_SOURCE_DIR}/hcsr04
         ${CMAKE_CURRENT_SOURCE_DIR}/TB6612FNG
         ${CMAKE_CURRENT_SOURCE_DIR}/mpu6050
+
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port
+        ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton
 )
 target_link_options(${PROJECT_NAME}.elf
     PRIVATE
