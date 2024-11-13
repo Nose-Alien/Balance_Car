@@ -234,7 +234,7 @@ int velocity(int encoder_left, int encoder_right, int Target_Speed)
 {
     static float Velocity, Encoder_Least, Encoder;
     static float Encoder_Integral;
-    Encoder_Least = (encoder_left + encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
+    Encoder_Least = (encoder_left + encoder_right*2);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
     Encoder *= 0.8;                                                        //===一阶低通滤波器
     Encoder += Encoder_Least * 0.2;                                        //===一阶低通滤波器
     Encoder_Integral += Encoder;                                       //===积分出位移 积分时间：5ms
@@ -318,8 +318,8 @@ void mode_job(int mode)
 }
 
 // 结构体变量，存储运行时的按键事件信息
-struct key event = {
-        .keyEvent = 0,  // 按键事件标志，默认为0表示无事件
+struct run event = {
+        .Event = 0,  // 按键事件标志，默认为0表示无事件
 };
 
 // 按键事件处理函数
@@ -331,7 +331,7 @@ static void Run_KeyEventHandler(void *button)
     // 根据按键ID触发对应的按键事件
     switch (name) {
         case TOUCH_KEY_1: {  // 按键1被按下，设置run.keyEvent为1
-            event.keyEvent = 1;
+            event.Event = 1;
             break;
         }
         default: {
@@ -353,13 +353,16 @@ void Run_Exit()
     // 解绑所有按键的事件处理函数
     button_detachAll(&TouchKey[TOUCH_KEY_1]);;
 }
+
 void Run_Key()
 {
-    enum {KEY_EVENT_1 = 1};
+    enum {
+        KEY_EVENT_1 = 1
+    };
 
     // 检查是否有按键事件发生
-    if (event.keyEvent != 0) {
-        switch (event.keyEvent) {
+    if (event.Event != 0) {
+        switch (event.Event) {
             case KEY_EVENT_1: {
 //                HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
                 mode = mode == 1 ? 3 : 1;
@@ -369,6 +372,6 @@ void Run_Key()
                 break;
             }
         }
-        event.keyEvent = 0;// 重置按键事件标志
+        event.Event = 0;// 重置按键事件标志
     }
 }

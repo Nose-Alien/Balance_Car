@@ -38,8 +38,8 @@ void run(void);
 void mode_job(int mode);
 void Run_Enter();
 void Run_Key();
-struct key {
-    uint16_t keyEvent; // 按键事件标志
+struct run {
+    uint16_t Event; // 按键事件标志
 };
 #ifdef __cplusplus
 }
