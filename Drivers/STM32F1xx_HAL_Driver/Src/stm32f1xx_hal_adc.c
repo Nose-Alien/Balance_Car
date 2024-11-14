@@ -61,7 +61,7 @@
       slower speed.
   
   (+) ADC input range: from Vref- (connected to Vssa) to Vref+ (connected to 
-      Vdda or to an external voltage reference).
+      Vdda or to an external Voltage reference).
 
 
                      ##### How to use this driver #####
@@ -2180,7 +2180,7 @@ HAL_StatusTypeDef HAL_ADC_AnalogWDGConfig(ADC_HandleTypeDef* hadc, ADC_AnalogWDG
             ##### Peripheral State and Errors functions #####
  ===============================================================================  
     [..]
-    This subsection provides functions to get in run-time the status of the  
+    This subsection provides functions to get in Run-time the status of the
     peripheral.
       (+) Check the ADC state
       (+) Check the ADC error code
@@ -2225,7 +2225,7 @@ uint32_t HAL_ADC_GetError(ADC_HandleTypeDef *hadc)
 /**
   * @brief  Enable the selected ADC.
   * @note   Prerequisite condition to use this function: ADC must be disabled
-  *         and voltage regulator must be enabled (done into HAL_ADC_Init()).
+  *         and Voltage regulator must be enabled (done into HAL_ADC_Init()).
   * @param  hadc: ADC handle
   * @retval HAL status.
   */

@@ -6323,7 +6323,7 @@ HAL_StatusTypeDef HAL_TIM_UnRegisterCallback(TIM_HandleTypeDef *htim, HAL_TIM_Ca
                         ##### Peripheral State functions #####
   ==============================================================================
     [..]
-    This subsection permits to get in run-time the status of the peripheral
+    This subsection permits to get in Run-time the status of the peripheral
     and the data flow.
 
 @endverbatim

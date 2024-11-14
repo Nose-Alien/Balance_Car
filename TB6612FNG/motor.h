@@ -28,7 +28,7 @@
 
 void Motor_Init(void);
 
-void Set_Pwm(int moto1, int moto2);
+void Set_Pwm(double moto1, double moto2);
 
 int myabs(int a);
 

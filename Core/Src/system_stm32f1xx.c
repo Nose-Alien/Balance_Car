@@ -209,7 +209,7 @@ void SystemInit (void)
   *         
   *         (*) HSI_VALUE is a constant defined in stm32f1xx.h file (default value
   *             8 MHz) but the real value may vary depending on the variations
-  *             in voltage and temperature.   
+  *             in Voltage and temperature.
   *    
   *         (**) HSE_VALUE is a constant defined in stm32f1xx.h file (default value
   *              8 MHz or 25 MHz, depending on the product used), user has to ensure

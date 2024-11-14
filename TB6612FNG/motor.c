@@ -6,7 +6,7 @@
 入口参数：左轮PWM、右轮PWM
 返回  值：无
 **************************************************************************/
-void Set_Pwm(int moto1, int moto2)
+void Set_Pwm(double moto1, double moto2)
 {
     if (moto1 > 0) {
         AIN1_0;

@@ -5303,7 +5303,7 @@ __weak void HAL_I2C_AbortCpltCallback(I2C_HandleTypeDef *hi2c)
             ##### Peripheral State, Mode and Error functions #####
  ===============================================================================
     [..]
-    This subsection permit to get in run-time the status of the peripheral
+    This subsection permit to get in Run-time the status of the peripheral
     and the data flow.
 
 @endverbatim

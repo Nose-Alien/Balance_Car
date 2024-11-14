@@ -2143,7 +2143,7 @@ __weak void HAL_TIMEx_BreakCallback(TIM_HandleTypeDef *htim)
                 ##### Extended Peripheral State functions #####
   ==============================================================================
   [..]
-    This subsection permits to get in run-time the status of the peripheral
+    This subsection permits to get in Run-time the status of the peripheral
     and the data flow.
 
 @endverbatim

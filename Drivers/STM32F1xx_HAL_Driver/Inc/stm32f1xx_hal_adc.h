@@ -94,7 +94,7 @@ typedef struct
                                         This parameter can be a value of @ref ADC_channels
                                         Note: Depending on devices, some channels may not be available on package pins. Refer to device datasheet for channels availability.
                                         Note: On STM32F1 devices with several ADC: Only ADC1 can access internal measurement channels (VrefInt/TempSensor) 
-                                        Note: On STM32F10xx8 and STM32F10xxB devices: A low-amplitude voltage glitch may be generated (on ADC input 0) on the PA0 pin, when the ADC is converting with injection trigger.
+                                        Note: On STM32F10xx8 and STM32F10xxB devices: A low-amplitude Voltage glitch may be generated (on ADC input 0) on the PA0 pin, when the ADC is converting with injection trigger.
                                               It is advised to distribute the analog channels so that Channel 0 is configured as an injected channel.
                                               Refer to errata sheet of these devices for more details. */
   uint32_t Rank;                   /*!< Specifies the rank in the regular group sequencer 
