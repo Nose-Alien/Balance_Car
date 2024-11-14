@@ -976,6 +976,30 @@ mpu6050/inv_mpu_dmp_motion_driver.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.s
 .PHONY : mpu6050/inv_mpu_dmp_motion_driver.c.s
 
+pid/pid.obj: pid/pid.c.obj
+.PHONY : pid/pid.obj
+
+# target to build an object file
+pid/pid.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj
+.PHONY : pid/pid.c.obj
+
+pid/pid.i: pid/pid.c.i
+.PHONY : pid/pid.i
+
+# target to preprocess a source file
+pid/pid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/pid/pid.c.i
+.PHONY : pid/pid.c.i
+
+pid/pid.s: pid/pid.c.s
+.PHONY : pid/pid.s
+
+# target to generate assembly for a file
+pid/pid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/pid/pid.c.s
+.PHONY : pid/pid.c.s
+
 user_main/user_main.obj: user_main/user_main.c.obj
 .PHONY : user_main/user_main.obj
 
@@ -1115,6 +1139,9 @@ help:
 	@echo ... mpu6050/inv_mpu_dmp_motion_driver.obj
 	@echo ... mpu6050/inv_mpu_dmp_motion_driver.i
 	@echo ... mpu6050/inv_mpu_dmp_motion_driver.s
+	@echo ... pid/pid.obj
+	@echo ... pid/pid.i
+	@echo ... pid/pid.s
 	@echo ... user_main/user_main.obj
 	@echo ... user_main/user_main.i
 	@echo ... user_main/user_main.s

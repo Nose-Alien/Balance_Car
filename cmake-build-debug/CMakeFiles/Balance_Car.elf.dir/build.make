@@ -557,10 +557,24 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.s"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050\inv_mpu_dmp_motion_driver.c -o CMakeFiles\Balance_Car.elf.dir\mpu6050\inv_mpu_dmp_motion_driver.c.s
 
+CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
+CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/pid/pid.c
+CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj -MF CMakeFiles\Balance_Car.elf.dir\pid\pid.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\pid\pid.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid\pid.c
+
+CMakeFiles/Balance_Car.elf.dir/pid/pid.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Balance_Car.elf.dir/pid/pid.c.i"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid\pid.c > CMakeFiles\Balance_Car.elf.dir\pid\pid.c.i
+
+CMakeFiles/Balance_Car.elf.dir/pid/pid.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/pid/pid.c.s"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid\pid.c -o CMakeFiles\Balance_Car.elf.dir\pid\pid.c.s
+
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/MultiButton/multi_button.c
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj -MF CMakeFiles\Balance_Car.elf.dir\keypad\MultiButton\multi_button.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\keypad\MultiButton\multi_button.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\MultiButton\multi_button.c
 
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.i: cmake_force
@@ -574,7 +588,7 @@ CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/button_port/button_port.c
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj -MF CMakeFiles\Balance_Car.elf.dir\keypad\button_port\button_port.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\keypad\button_port\button_port.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\button_port\button_port.c
 
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.i: cmake_force
@@ -622,6 +636,7 @@ Balance_Car_elf_OBJECTS = \
 "CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj" \
+"CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj"
 
@@ -663,11 +678,12 @@ Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj
+Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/build.make
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Linking C executable Balance_Car.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking C executable Balance_Car.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Balance_Car.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/cmake-build-debug/Balance_Car.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/cmake-build-debug/Balance_Car.bin"

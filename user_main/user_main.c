@@ -58,6 +58,10 @@ _Noreturn void user_main()
     HAL_TIM_Base_Start_IT(&htim4);
     TouchKey_Init();  // 初始化触摸按键功能
     Run_Enter();
+
+    pid_init(&g_balance_pid, BLC_KP, 0.0f, BLC_KD); // 初始化直立环 PD
+    pid_init(&g_speed_pid, 0.0f, 0.0f, 0.0f); // 初始化速度环 PID
+    pid_init(&g_turn_pid, TURN_KP, 0.0f, TURN_KD); // 初始化转向环 PD
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
         Mode_Oled(mode);    // 显示模式选择
@@ -67,6 +71,7 @@ _Noreturn void user_main()
         OLED_Refresh_Gram();  // 刷新OLED显示内容
     }
 }
+
 /**
   * @brief 获取超声波距离
   * @param sign 工作标志位
@@ -87,7 +92,7 @@ void Mode_State(int Mode)
 {
     Target_Speed = 0;
     Turn_Speed = -2;
-    if(Mode==3) {
+    if (Mode == 3) {
         if (obstacle_sign == 1) {
             Target_Speed = -30;
             Turn_Speed = -2;
@@ -130,8 +135,8 @@ void Run(void)//10ms工作一次
         if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
         if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
 
-        Balance_Pwm = balance_UP(pit, Mechanical_angle*2, gyr_y);//===直立环PID控制
-        Velocity_Pwm = velocity_UP(Encoder_Left, Encoder_Right*2, Target_Speed);//===速度环PID控制
+        Balance_Pwm = balance_UP(pit, Mechanical_angle * 2, gyr_y);//===直立环PID控制
+        Velocity_Pwm = velocity_UP(Encoder_Left, Encoder_Right * 2, Target_Speed);//===速度环PID控制
         Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
         Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
         Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
@@ -156,19 +161,12 @@ void Mode_Oled(uint8_t Mode)
     Voltage = Get_Voltage();
     switch (Mode) {
         case 1: {
-            OLED_DrawStr(28, line_1, "Bluetooth", MEDIUM, 0);
-            OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
-            OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
-            OLED_DrawNum0(12, line_2, (int) Voltage, MEDIUM, 0);
-            OLED_DrawChar(28, line_2, '.', MEDIUM, 0);
-            OLED_DrawNum(32, line_2, (uint16_t) (Voltage * 10) % 10, MEDIUM, 0);  // 第一位小数
-
+            NRF24L01_Oled();
             mpu6050_oled();
             Encoder_oled();
             break;
         }
         case 3: {
-
             Obstacle_Oled();
             mpu6050_oled();
             Encoder_oled();
@@ -178,6 +176,16 @@ void Mode_Oled(uint8_t Mode)
             break;
         }
     }
+}
+
+void NRF24L01_Oled()
+{
+    OLED_DrawStr(28, line_1, "NRF24L01", MEDIUM, 0);
+    OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
+    OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
+    OLED_DrawNum0(12, line_2, (int) Voltage, MEDIUM, 0);
+    OLED_DrawChar(28, line_2, '.', MEDIUM, 0);
+    OLED_DrawNum(32, line_2, (uint16_t) (Voltage * 10) % 10, MEDIUM, 0);  // 第一位小数
 }
 
 void Obstacle_Oled()
@@ -240,11 +248,8 @@ int16_t Read_Encoder(uint8_t X)
 **************************************************************************/
 float balance_UP(float Angle, float Mechanical_balance, float Gyro)
 {
-    float Bias;
-    float balance;
-    Bias = Angle - Mechanical_balance;                                 //===求出平衡的角度中值和机械相关
-    balance = balance_KP * Bias + balance_KD * Gyro;  //===计算平衡控制的电机PWM  PD控制   kp是P系数 kd是D系数
-    return balance;
+    g_balance_pid.SetPoint = Mechanical_balance;
+    return increment_pid_ctrl(&g_balance_pid, Angle, Gyro);
 }
 
 /**************************************************************************
@@ -252,35 +257,62 @@ float balance_UP(float Angle, float Mechanical_balance, float Gyro)
 入口参数：电机编码器的值
 返回  值：速度控制PWM
 **************************************************************************/
+
 float velocity_UP(int encoder_left, int encoder_right, float target_Speed)
 {
     static float Velocity, Encoder_Least, Encoder;
     static float Encoder_Integral;
-    Encoder_Least = ((float)encoder_left + (float)encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
-    Encoder *= (float)0.8;                                                        //===一阶低通滤波器
-    Encoder += Encoder_Least * 0.2;                                        //===一阶低通滤波器
+    Encoder_Least = (float) (encoder_left +
+                             encoder_right);//-target;                    //===获取最新速度偏差==测量速度（左右编码器之和）-目标速度
+    Encoder *= (float) 0.8;                                                        //===一阶低通滤波器
+    Encoder += (float) (Encoder_Least * 0.2);                                        //===一阶低通滤波器
     Encoder_Integral += Encoder;                                       //===积分出位移 积分时间：5ms
+
+    if (pit < -40 || pit > 40) {
+        target_Speed = 0;
+        Encoder_Integral = 0;
+        Encoder = 0;
+    }
+
+//    g_speed_pid.SetPoint = target_Speed;
+//    g_speed_pid.Proportion = velocity_KI;
+//    g_speed_pid.Integral = 0.0f;
+//    g_speed_pid.Derivative = velocity_KP;
+//    Velocity = increment_pid_ctrl(&g_speed_pid,
+//                                  Encoder_Integral,
+//                                  Encoder);
+
     Encoder_Integral = Encoder_Integral - target_Speed;                       //===接收遥控器数据，控制前进后退
     if (Encoder_Integral > 10000) Encoder_Integral = 10000;             //===积分限幅
     if (Encoder_Integral < -10000) Encoder_Integral = -10000;            //===积分限幅
-    Velocity = Encoder * velocity_KP + Encoder_Integral * velocity_KI;        //===速度控制
+    Velocity = Encoder_Integral * velocity_KI + Encoder * velocity_KP;
     if (pit < -40 || pit > 40) Encoder_Integral = 0;                            //===电机关闭后清除积分
+
     return Velocity;
 }
-
 /**************************************************************************
 函数功能：转向PD控制
 入口参数：电机编码器的值、Z轴角速度
 返回  值：转向控制PWM
 **************************************************************************/
 
+//float Turn_UP(int gyro_Z, float RC)
+//{
+//    float PWM_out;
+//    if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
+//    else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+//    PWM_out = Turn_Kd * (float) gyro_Z + Turn_KP * RC;
+//    return PWM_out;
+//}
+
 float Turn_UP(int gyro_Z, float RC)
 {
-    float PWM_out;
     if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
     else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
-    PWM_out = Turn_Kd * (float)gyro_Z + Turn_KP * RC;
-    return PWM_out;
+    g_turn_pid.Derivative = Turn_Kd;
+    return increment_pid_ctrl(&g_turn_pid,
+                              RC,
+                              (float) gyro_Z);;
 }
 
 /**************************************************************************
@@ -304,12 +336,13 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Turn_Off(float angle, float voltage)
 {
-    if (angle < -40 || angle > 40 || voltage < 10)     //电池电压低于11V关闭电机
+    if (angle < -40 || angle > 40 || voltage < 11)     //电池电压低于11V关闭电机
     {                                       //===倾角大于40度关闭电机
         Moto1 = 0;
         Moto2 = 0;
     }
 }
+
 /**************************************************************************
 函数功能：模式选择
 入口参数：模式
@@ -334,7 +367,7 @@ void mode_select(int Mode)
 //            break;
 
         case 3: {//避障模式
-            if (distance <= 30) { obstacle_sign = obstacle_sign == 0 ? 1 : 0; }
+            if (distance <= 10) { obstacle_sign = obstacle_sign == 0 ? 1 : 0; }
             break;
         }
         default: {

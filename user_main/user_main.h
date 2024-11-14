@@ -19,6 +19,7 @@ extern "C"
 #include "inv_mpu.h"
 #include "multi_button.h"
 #include "button_port.h"
+#include "pid.h"
 #define BLC_KP  390//390
 #define BLC_KD  1.5//1.5
 #define SPD_KP  -130
@@ -43,6 +44,7 @@ void Run_Key();
 void Mode_State(int Mode);
 void Git_Ultrasonic(int8_t sign);
 void Obstacle_Oled();
+void NRF24L01_Oled();
 struct run {
     uint16_t Event; // 按键事件标志
 };

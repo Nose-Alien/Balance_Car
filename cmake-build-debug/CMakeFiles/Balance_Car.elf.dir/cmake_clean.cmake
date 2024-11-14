@@ -73,6 +73,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj.d"
   "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj"
   "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj.d"
+  "CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj"
+  "CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj.d"
   "CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj"
   "CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj.d"
 )
