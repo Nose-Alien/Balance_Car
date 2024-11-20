@@ -686,7 +686,7 @@ typedef struct
 #define __HAL_RCC_HSI_DISABLE() (*(__IO uint32_t *) RCC_CR_HSION_BB = DISABLE)
 
 /** @brief  Macro to adjust the Internal High Speed oscillator (HSI) calibration value.
-  * @note   The calibration is used to compensate for the variations in Voltage
+  * @note   The calibration is used to compensate for the variations in voltage
   *         and temperature that influence the frequency of the internal HSI RC.
   * @param  _HSICALIBRATIONVALUE_ specifies the calibration trimming value.
   *         (default is RCC_HSICALIBRATION_DEFAULT).

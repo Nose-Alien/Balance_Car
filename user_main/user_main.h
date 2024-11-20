@@ -45,6 +45,8 @@ void Mode_State(int Mode);
 void Git_Ultrasonic(int8_t sign);
 void Obstacle_Oled();
 void NRF24L01_Oled();
+void Bluetooth_Oled();
+void BluetoothCMD(int Uart_Receive);
 struct run {
     uint16_t Event; // 按键事件标志
 };

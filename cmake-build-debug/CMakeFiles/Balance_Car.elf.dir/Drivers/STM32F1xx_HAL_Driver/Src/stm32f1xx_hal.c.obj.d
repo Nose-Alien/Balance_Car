@@ -34,4 +34,5 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_i2c.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pwr.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim.h \
- D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_uart.h

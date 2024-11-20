@@ -38,6 +38,7 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pwr.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_uart.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\OLED\Inc/driver_ssd1306.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Delay/delay.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/adc.h \
@@ -63,4 +64,5 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\strings.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\string.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\button_port/button_port.h \
- D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid/pid.h
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid/pid.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/usart.h

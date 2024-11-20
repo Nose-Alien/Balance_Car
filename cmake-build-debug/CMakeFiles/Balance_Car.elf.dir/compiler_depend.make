@@ -31,6 +31,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/adc.c.obj: D:/STM32xmu/CLION/STM32F103C8
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -70,6 +71,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/gpio.c.obj: D:/STM32xmu/CLION/STM32F103C
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -109,6 +111,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/i2c.c.obj: D:/STM32xmu/CLION/STM32F103C8
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -125,6 +128,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/main.c.obj: D:/STM32xmu/CLION/STM32F103C
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/main.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/stm32f1xx_hal_conf.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/tim.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/usart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Delay/delay.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
@@ -152,6 +156,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/main.c.obj: D:/STM32xmu/CLION/STM32F103C
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Inc/driver_ssd1306.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/TB6612FNG/motor.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/hcsr04/hcsr04.h \
@@ -212,6 +217,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/stm32f1xx_hal_msp.c.obj: D:/STM32xmu/CLI
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -251,6 +257,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/stm32f1xx_it.c.obj: D:/STM32xmu/CLION/ST
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -355,6 +362,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/system_stm32f1xx.c.obj: D:/STM32xmu/CLIO
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -394,6 +402,47 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/tim.c.obj: D:/STM32xmu/CLION/STM32F103C8
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/lib/gcc/arm-none-eabi/12.2.1/include/stddef.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h
+
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Src/usart.c \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/main.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/stm32f1xx_hal_conf.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/usart.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/core_cm3.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -432,6 +481,7 @@ CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj: D:/STM32xmu/CLION/STM32F103C8T
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -469,6 +519,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -506,6 +557,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ad
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -543,6 +595,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ad
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -580,6 +633,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_co
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -617,6 +671,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dm
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -654,6 +709,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ex
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -691,6 +747,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_fl
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -728,6 +785,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_fl
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -765,6 +823,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gp
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -802,6 +861,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gp
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -839,6 +899,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -876,6 +937,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pw
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -913,6 +975,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rc
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -950,6 +1013,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rc
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -987,6 +1051,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ti
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -1024,6 +1089,45 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ti
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/_intsup.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/_stdint.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/sys/features.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/lib/gcc/arm-none-eabi/12.2.1/include/stddef.h \
+  D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/lib/gcc/arm-none-eabi/12.2.1/include/stdint.h
+
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/stm32f1xx_hal_conf.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_gcc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_version.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/core_cm3.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/stdint.h \
@@ -1064,6 +1168,7 @@ CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj: D:/STM32xmu/CLION/
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Inc/driver_i2c.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Inc/driver_ssd1306.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Inc/oledfont.h \
@@ -1118,6 +1223,7 @@ CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj: D:/STM32xmu/CLION/STM32F10
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/TB6612FNG/motor.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
@@ -1160,6 +1266,7 @@ CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj: D:/STM32xmu/CLION/STM32F103C
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/hcsr04/hcsr04.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
@@ -1224,6 +1331,7 @@ CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: D:/STM32xmu
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/MultiButton/multi_button.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/button_port/button_port.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_ansi.h \
@@ -1278,6 +1386,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj: D:/STM32xmu/CLION/STM32
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/atk_ms6050.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/delay.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu.h \
@@ -1331,6 +1440,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj: D:/STM32xmu/CLION/STM32F10
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/atk_ms6050.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/delay.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu.h \
@@ -1393,6 +1503,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj: D:/STM32
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/delay.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/dmpKey.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/dmpmap.h \
@@ -1456,6 +1567,7 @@ CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Ba
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/pid/pid.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/_newlib_version.h \
   D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/machine/_default_types.h \
@@ -1472,6 +1584,7 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: D:/STM32xmu/CLION/STM3
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/main.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/stm32f1xx_hal_conf.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/tim.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/usart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Delay/delay.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
@@ -1499,6 +1612,7 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: D:/STM32xmu/CLION/STM3
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+  D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Inc/driver_ssd1306.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/TB6612FNG/motor.h \
   D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/hcsr04/hcsr04.h \
@@ -1573,6 +1687,8 @@ D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/lib/gcc/arm-none-eabi/12.2.1/in
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_compiler.h:
 
+D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Inc/usart.h:
+
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_gcc.h:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/CMSIS/Include/cmsis_version.h:
@@ -1586,6 +1702,8 @@ D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h:
+
+D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 D:/Arm\ GNU\ Toolchain\ arm-none-eabi/12.2\ rel1/arm-none-eabi/include/strings.h:
 
@@ -1743,6 +1861,8 @@ D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Src/system_stm32f1xx.c:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Src/tim.c:
 
+D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Src/usart.c:
+
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Delay/delay.c:
@@ -1772,6 +1892,8 @@ D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c:
+
+D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c:
 
 D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Src/driver_ssd1306.c:
 

@@ -753,7 +753,7 @@ void HAL_FLASH_OB_Launch(void)
                       ##### Peripheral Errors functions #####
  ===============================================================================  
     [..]
-    This subsection permit to get in Run-time errors of  the FLASH peripheral.
+    This subsection permit to get in run-time errors of  the FLASH peripheral.
 
 @endverbatim
   * @{

@@ -36,10 +36,12 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/main.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pwr.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_uart.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/adc.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/main.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/i2c.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/tim.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/usart.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/gpio.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\user_main/user_main.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\cdefs.h \

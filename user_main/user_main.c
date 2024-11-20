@@ -6,6 +6,7 @@
   */
 
 #include "user_main.h"
+#include "usart.h"
 
 double Moto1 = 0, Moto2 = 0;///计算出来的最终赋给电机的PWM
 float pit, rol, yaw;
@@ -16,6 +17,7 @@ int distance = 0;  // 超声波测距结果
 int8_t distance_sign = 0; //超声波标志位
 int8_t obstacle_sign = 0; //避障标志位
 int mode = 1;  // 模式选择变量
+uint8_t Fore,Back,Left,Right;
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
 #define SPEED_Z 85//偏航(左右)最大设定速度
@@ -27,7 +29,7 @@ int16_t gyr_x, gyr_y, gyr_z;
 
 float Mechanical_angle = 0;
 float Target_Speed = 0;    //期望速度（俯仰）。用于控制小车前进后退及其速度。
-float Turn_Speed = -2;        //期望速度（偏航）
+float Turn_Speed = 0;        //期望速度（偏航）
 
 float balance_KP = BLC_KP;     // 小车直立环PD参数
 float balance_KD = BLC_KD;
@@ -60,7 +62,7 @@ _Noreturn void user_main()
     Run_Enter();
 
     pid_init(&g_balance_pid, BLC_KP, 0.0f, BLC_KD); // 初始化直立环 PD
-    pid_init(&g_speed_pid, 0.0f, 0.0f, 0.0f); // 初始化速度环 PID
+//    pid_init(&g_speed_pid, 0.0f, 0.0f, 0.0f); // 初始化速度环 PID
     pid_init(&g_turn_pid, TURN_KP, 0.0f, TURN_KD); // 初始化转向环 PD
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
@@ -105,6 +107,52 @@ void Mode_State(int Mode)
         }
     }
 }
+// 串口中断回调函数
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART2)
+    {
+        uint8_t Uart_Receive;
+        HAL_UART_Receive_IT(&huart2, &Uart_Receive, 1); // 再次使能接收中断
+        BluetoothCMD(Uart_Receive); // 处理接收到的数据
+    }
+}
+void BluetoothCMD(int Uart_Receive)
+{
+    switch(Uart_Receive)
+    {
+        case 90://停止 Z
+            Fore=0,Back=0,Left=0,Right=0;
+            break;
+        case 65://前进 A
+            Fore=1,Back=0,Left=0,Right=0;
+            break;
+        case 72://左前 H
+            Fore=1,Back=0,Left=1,Right=0;
+            break;
+        case 66://右前 B
+            Fore=1,Back=0,Left=0,Right=1;
+            break;
+        case 71://左转 G
+            Fore=0,Back=0,Left=1,Right=0;
+            break;
+        case 67://右转 C
+            Fore=0,Back=0,Left=0,Right=1;
+            break;
+        case 69://后退 E
+            Fore=0,Back=1,Left=0,Right=0;
+            break;
+        case 70://左后,向右旋 F
+            Fore=0,Back=1,Left=0,Right=1;
+            break;
+        case 68://右后，向左旋 D
+            Fore=0,Back=1,Left=1,Right=0;
+            break;
+        default://停止 Z
+            Fore=0,Back=0,Left=0,Right=0;
+            break;
+    }
+}
 
 /**
   * @brief 外部中断回调函数
@@ -135,7 +183,7 @@ void Run(void)//10ms工作一次
         if (Turn_Speed > SPEED_Z) Turn_Speed = SPEED_Z;  //转向环转向速度限幅
         if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
 
-        Balance_Pwm = balance_UP(pit, Mechanical_angle * 2, gyr_y);//===直立环PID控制
+        Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
         Velocity_Pwm = velocity_UP(Encoder_Left, Encoder_Right * 2, Target_Speed);//===速度环PID控制
         Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
         Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
@@ -161,6 +209,13 @@ void Mode_Oled(uint8_t Mode)
     Voltage = Get_Voltage();
     switch (Mode) {
         case 1: {
+            Bluetooth_Oled();
+            mpu6050_oled();
+            Encoder_oled();
+
+            break;
+        }
+        case 2: {
             NRF24L01_Oled();
             mpu6050_oled();
             Encoder_oled();
@@ -181,6 +236,15 @@ void Mode_Oled(uint8_t Mode)
 void NRF24L01_Oled()
 {
     OLED_DrawStr(28, line_1, "NRF24L01", MEDIUM, 0);
+    OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
+    OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
+    OLED_DrawNum0(12, line_2, (int) Voltage, MEDIUM, 0);
+    OLED_DrawChar(28, line_2, '.', MEDIUM, 0);
+    OLED_DrawNum(32, line_2, (uint16_t) (Voltage * 10) % 10, MEDIUM, 0);  // 第一位小数
+}
+void Bluetooth_Oled()
+{
+    OLED_DrawStr(28, line_1, "Bluetooth", MEDIUM, 0);
     OLED_DrawChar(0, line_2, 'V', MEDIUM, 0);
     OLED_DrawChar(6, line_2, ':', MEDIUM, 0);
     OLED_DrawNum0(12, line_2, (int) Voltage, MEDIUM, 0);
@@ -286,7 +350,7 @@ float velocity_UP(int encoder_left, int encoder_right, float target_Speed)
     if (Encoder_Integral > 10000) Encoder_Integral = 10000;             //===积分限幅
     if (Encoder_Integral < -10000) Encoder_Integral = -10000;            //===积分限幅
     Velocity = Encoder_Integral * velocity_KI + Encoder * velocity_KP;
-    if (pit < -40 || pit > 40) Encoder_Integral = 0;                            //===电机关闭后清除积分
+    if (pit < -40 || pit > 70) Encoder_Integral = 0;                            //===电机关闭后清除积分
 
     return Velocity;
 }
@@ -307,8 +371,12 @@ float velocity_UP(int encoder_left, int encoder_right, float target_Speed)
 
 float Turn_UP(int gyro_Z, float RC)
 {
-    if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
-    else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+    if (RC == 0) {//若无左右转向指令，则开启转向约束
+        Turn_Kd = TURN_KD;
+    }
+    else{
+        Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+    }
     g_turn_pid.Derivative = Turn_Kd;
     return increment_pid_ctrl(&g_turn_pid,
                               RC,
@@ -336,7 +404,7 @@ void Xianfu_Pwm(void)
 **************************************************************************/
 void Turn_Off(float angle, float voltage)
 {
-    if (angle < -40 || angle > 40 || voltage < 11)     //电池电压低于11V关闭电机
+    if (angle < -40 || angle > 70 || voltage < 11)     //电池电压低于11V关闭电机
     {                                       //===倾角大于40度关闭电机
         Moto1 = 0;
         Moto2 = 0;
@@ -354,6 +422,13 @@ void mode_select(int Mode)
     static uint32_t Count = 0;
     switch (Mode) {
         case 1: {//蓝牙模式
+            if((Fore==0)&&(Back==0))Target_Speed=0;//未接受到前进后退指令-->速度清零，稳在原地
+            if(Fore==1)Target_Speed+=1;//前进1标志位拉高-->需要前进
+            if(Back==1)Target_Speed-=1;
+            /*左右*/
+            if((Left==0)&&(Right==0))Turn_Speed=0;
+            if(Left==1)Turn_Speed-=10;//左转
+            if(Right==1)Turn_Speed+=10;//右转
         }
             break;
 //        case 2:  //NRF24L01模式
@@ -367,7 +442,7 @@ void mode_select(int Mode)
 //            break;
 
         case 3: {//避障模式
-            if (distance <= 10) { obstacle_sign = obstacle_sign == 0 ? 1 : 0; }
+            if (distance <= 40) obstacle_sign = obstacle_sign == 0 ? 1 : 0;
             break;
         }
         default: {

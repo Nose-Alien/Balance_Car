@@ -141,7 +141,7 @@ static uint8_t           FLASH_OB_GetUser(void);
 
 /**
   * @brief  Perform a mass erase or erase the specified FLASH memory pages
-  * @note   To correctly Run this function, the @ref HAL_FLASH_Unlock() function
+  * @note   To correctly run this function, the @ref HAL_FLASH_Unlock() function
   *         must be called before.
   *         Call the @ref HAL_FLASH_Lock() to disable the flash memory access 
   *         (recommended to protect the FLASH memory against possible unwanted operation)
@@ -305,7 +305,7 @@ HAL_StatusTypeDef HAL_FLASHEx_Erase(FLASH_EraseInitTypeDef *pEraseInit, uint32_t
 
 /**
   * @brief  Perform a mass erase or erase the specified FLASH memory pages with interrupt enabled
-  * @note   To correctly Run this function, the @ref HAL_FLASH_Unlock() function
+  * @note   To correctly run this function, the @ref HAL_FLASH_Unlock() function
   *         must be called before.
   *         Call the @ref HAL_FLASH_Lock() to disable the flash memory access 
   *         (recommended to protect the FLASH memory against possible unwanted operation)

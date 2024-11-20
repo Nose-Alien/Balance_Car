@@ -1060,7 +1060,7 @@ void HAL_RCC_DisableCSS(void)
   *           divided by PREDIV factor(**) or HSI_VALUE(*) multiplied by the PLL factor.
   * @note     (*) HSI_VALUE is a constant defined in stm32f1xx_hal_conf.h file (default value
   *               8 MHz) but the real value may vary depending on the variations
-  *               in Voltage and temperature.
+  *               in voltage and temperature.
   * @note     (**) HSE_VALUE is a constant defined in stm32f1xx_hal_conf.h file (default value
   *                8 MHz), user has to ensure that HSE_VALUE is same as the real
   *                frequency of the crystal used. Otherwise, this function may

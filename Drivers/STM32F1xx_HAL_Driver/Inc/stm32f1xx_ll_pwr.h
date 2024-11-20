@@ -63,7 +63,7 @@ extern "C" {
   */
 #define LL_PWR_CSR_WUF                     PWR_CSR_WUF            /*!< Wakeup flag */
 #define LL_PWR_CSR_SBF                     PWR_CSR_SBF            /*!< Standby flag */
-#define LL_PWR_CSR_PVDO                    PWR_CSR_PVDO           /*!< Power Voltage detector output flag */
+#define LL_PWR_CSR_PVDO                    PWR_CSR_PVDO           /*!< Power voltage detector output flag */
 #define LL_PWR_CSR_EWUP1                   PWR_CSR_EWUP           /*!< Enable WKUP pin 1 */
 /**
   * @}
@@ -187,7 +187,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsEnabledBkUpAccess(void)
 }
 
 /**
-  * @brief  Set Voltage Regulator mode during deep sleep mode
+  * @brief  Set voltage Regulator mode during deep sleep mode
   * @rmtoll CR    LPDS         LL_PWR_SetRegulModeDS
   * @param  RegulMode This parameter can be one of the following values:
   *         @arg @ref LL_PWR_REGU_DSMODE_MAIN
@@ -200,7 +200,7 @@ __STATIC_INLINE void LL_PWR_SetRegulModeDS(uint32_t RegulMode)
 }
 
 /**
-  * @brief  Get Voltage Regulator mode during deep sleep mode
+  * @brief  Get voltage Regulator mode during deep sleep mode
   * @rmtoll CR    LPDS         LL_PWR_GetRegulModeDS
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_REGU_DSMODE_MAIN
@@ -241,7 +241,7 @@ __STATIC_INLINE uint32_t LL_PWR_GetPowerMode(void)
 }
 
 /**
-  * @brief  Configure the Voltage threshold detected by the Power Voltage Detector
+  * @brief  Configure the voltage threshold detected by the Power Voltage Detector
   * @rmtoll CR    PLS       LL_PWR_SetPVDLevel
   * @param  PVDLevel This parameter can be one of the following values:
   *         @arg @ref LL_PWR_PVDLEVEL_0
@@ -260,7 +260,7 @@ __STATIC_INLINE void LL_PWR_SetPVDLevel(uint32_t PVDLevel)
 }
 
 /**
-  * @brief  Get the Voltage threshold detection
+  * @brief  Get the voltage threshold detection
   * @rmtoll CR    PLS       LL_PWR_GetPVDLevel
   * @retval Returned value can be one of the following values:
   *         @arg @ref LL_PWR_PVDLEVEL_0
@@ -373,7 +373,7 @@ __STATIC_INLINE uint32_t LL_PWR_IsActiveFlag_SB(void)
 }
 
 /**
-  * @brief  Indicate whether VDD Voltage is below the selected PVD threshold
+  * @brief  Indicate whether VDD voltage is below the selected PVD threshold
   * @rmtoll CSR   PVDO       LL_PWR_IsActiveFlag_PVDO
   * @retval State of bit (1 or 0).
   */

@@ -36,6 +36,7 @@ CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pwr.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_uart.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\OLED\Inc/oledfont.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/i2c.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/main.h \

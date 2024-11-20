@@ -37,6 +37,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_pwr.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_tim_ex.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal_uart.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050\delay.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\stdio.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_ansi.h \

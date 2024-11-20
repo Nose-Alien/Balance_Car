@@ -248,7 +248,7 @@ void HAL_PWR_DisableBkUpAccess(void)
    =================
     [..]
       The Stop mode is based on the Cortex-M3 deepsleep mode combined with peripheral
-      clock gating. The Voltage regulator can be configured either in normal or low-power mode.
+      clock gating. The voltage regulator can be configured either in normal or low-power mode.
       In Stop mode, all clocks in the 1.8 V domain are stopped, the PLL, the HSI and the HSE RC 
       oscillators are disabled. SRAM and register contents are preserved.
       In Stop mode, all I/O pins keep the same state as in Run mode.
@@ -268,7 +268,7 @@ void HAL_PWR_DisableBkUpAccess(void)
    ====================
      [..]
       The Standby mode allows to achieve the lowest power consumption. It is based on the
-      Cortex-M3 deepsleep mode, with the Voltage regulator disabled. The 1.8 V domain is
+      Cortex-M3 deepsleep mode, with the voltage regulator disabled. The 1.8 V domain is 
       consequently powered off. The PLL, the HSI oscillator and the HSE oscillator are also 
       switched off. SRAM and register contents are lost except for registers in the Backup domain 
       and Standby circuitry
@@ -304,11 +304,11 @@ void HAL_PWR_DisableBkUpAccess(void)
   */
 
 /**
-  * @brief  Configures the Voltage threshold detected by the Power Voltage Detector(PVD).
+  * @brief  Configures the voltage threshold detected by the Power Voltage Detector(PVD).
   * @param  sConfigPVD: pointer to an PWR_PVDTypeDef structure that contains the configuration
   *         information for the PVD.
   * @note   Refer to the electrical characteristics of your device datasheet for
-  *         more details about the Voltage threshold corresponding to each
+  *         more details about the voltage threshold corresponding to each
   *         detection level.
   * @retval None
   */
@@ -357,7 +357,7 @@ void HAL_PWR_ConfigPVD(PWR_PVDTypeDef *sConfigPVD)
   */
 void HAL_PWR_EnablePVD(void)
 {
-  /* Enable the power Voltage detector */
+  /* Enable the power voltage detector */
   *(__IO uint32_t *) CR_PVDE_BB = (uint32_t)ENABLE;
 }
 
@@ -367,7 +367,7 @@ void HAL_PWR_EnablePVD(void)
   */
 void HAL_PWR_DisablePVD(void)
 {
-  /* Disable the power Voltage detector */
+  /* Disable the power voltage detector */
   *(__IO uint32_t *) CR_PVDE_BB = (uint32_t)DISABLE;
 }
 
@@ -445,7 +445,7 @@ void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry)
   * @note  In Stop mode, all I/O pins keep the same state as in Run mode.
   * @note  When exiting Stop mode by using an interrupt or a wakeup event,
   *        HSI RC oscillator is selected as system clock.
-  * @note  When the Voltage regulator operates in low power mode, an additional
+  * @note  When the voltage regulator operates in low power mode, an additional
   *         startup delay is incurred when waking up from Stop mode. 
   *         By keeping the internal regulator ON during Stop mode, the consumption
   *         is higher although the startup time is reduced.    
@@ -468,7 +468,7 @@ void HAL_PWR_EnterSTOPMode(uint32_t Regulator, uint8_t STOPEntry)
   /* Clear PDDS bit in PWR register to specify entering in STOP mode when CPU enter in Deepsleep */ 
   CLEAR_BIT(PWR->CR,  PWR_CR_PDDS);
 
-  /* Select the Voltage regulator mode by setting LPDS bit in PWR register according to Regulator parameter value */
+  /* Select the voltage regulator mode by setting LPDS bit in PWR register according to Regulator parameter value */
   MODIFY_REG(PWR->CR, PWR_CR_LPDS, Regulator);
 
   /* Set SLEEPDEEP bit of Cortex System Control Register */
@@ -520,7 +520,7 @@ void HAL_PWR_EnterSTANDBYMode(void)
   * @brief Indicates Sleep-On-Exit when returning from Handler mode to Thread mode. 
   * @note Set SLEEPONEXIT bit of SCR register. When this bit is set, the processor 
   *       re-enters SLEEP mode when an interruption handling is over.
-  *       Setting this bit is useful when the processor is expected to Run only on
+  *       Setting this bit is useful when the processor is expected to run only on
   *       interruptions handling.         
   * @retval None
   */

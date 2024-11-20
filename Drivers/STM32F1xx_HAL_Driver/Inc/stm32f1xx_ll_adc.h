@@ -520,7 +520,7 @@ typedef struct
 #define LL_ADC_CHANNEL_15                  (ADC_CHANNEL_15_NUMBER | ADC_CHANNEL_15_SMP) /*!< ADC external channel (channel connected to GPIO pin) ADCx_IN15 */
 #define LL_ADC_CHANNEL_16                  (ADC_CHANNEL_16_NUMBER | ADC_CHANNEL_16_SMP) /*!< ADC external channel (channel connected to GPIO pin) ADCx_IN16 */
 #define LL_ADC_CHANNEL_17                  (ADC_CHANNEL_17_NUMBER | ADC_CHANNEL_17_SMP) /*!< ADC external channel (channel connected to GPIO pin) ADCx_IN17 */
-#define LL_ADC_CHANNEL_VREFINT             (LL_ADC_CHANNEL_17 | ADC_CHANNEL_ID_INTERNAL_CH) /*!< ADC internal channel connected to VrefInt: Internal Voltage reference. On STM32F1, ADC channel available only on ADC instance: ADC1. */
+#define LL_ADC_CHANNEL_VREFINT             (LL_ADC_CHANNEL_17 | ADC_CHANNEL_ID_INTERNAL_CH) /*!< ADC internal channel connected to VrefInt: Internal voltage reference. On STM32F1, ADC channel available only on ADC instance: ADC1. */
 #define LL_ADC_CHANNEL_TEMPSENSOR          (LL_ADC_CHANNEL_16 | ADC_CHANNEL_ID_INTERNAL_CH) /*!< ADC internal channel connected to Temperature sensor. */
 /**
   * @}
@@ -814,9 +814,9 @@ typedef struct
 #define LL_ADC_AWD_CHANNEL_17_REG          ((LL_ADC_CHANNEL_17 & ADC_CHANNEL_ID_MASK)                  | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC external channel (channel connected to GPIO pin) ADCx_IN17, converted by group regular only */
 #define LL_ADC_AWD_CHANNEL_17_INJ          ((LL_ADC_CHANNEL_17 & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN                 | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC external channel (channel connected to GPIO pin) ADCx_IN17, converted by group injected only */
 #define LL_ADC_AWD_CHANNEL_17_REG_INJ      ((LL_ADC_CHANNEL_17 & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC external channel (channel connected to GPIO pin) ADCx_IN17, converted by either group regular or injected */
-#define LL_ADC_AWD_CH_VREFINT_REG          ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK)                  | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal Voltage reference, converted by group regular only */
-#define LL_ADC_AWD_CH_VREFINT_INJ          ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN                 | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal Voltage reference, converted by group injected only */
-#define LL_ADC_AWD_CH_VREFINT_REG_INJ      ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal Voltage reference, converted by either group regular or injected */
+#define LL_ADC_AWD_CH_VREFINT_REG          ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK)                  | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal voltage reference, converted by group regular only */
+#define LL_ADC_AWD_CH_VREFINT_INJ          ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN                 | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal voltage reference, converted by group injected only */
+#define LL_ADC_AWD_CH_VREFINT_REG_INJ      ((LL_ADC_CHANNEL_VREFINT    & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to VrefInt: Internal voltage reference, converted by either group regular or injected */
 #define LL_ADC_AWD_CH_TEMPSENSOR_REG       ((LL_ADC_CHANNEL_TEMPSENSOR & ADC_CHANNEL_ID_MASK)                  | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to Temperature sensor, converted by group regular only */
 #define LL_ADC_AWD_CH_TEMPSENSOR_INJ       ((LL_ADC_CHANNEL_TEMPSENSOR & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN                 | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to Temperature sensor, converted by group injected only */
 #define LL_ADC_AWD_CH_TEMPSENSOR_REG_INJ   ((LL_ADC_CHANNEL_TEMPSENSOR & ADC_CHANNEL_ID_MASK) | ADC_CR1_JAWDEN | ADC_CR1_AWDEN | ADC_CR1_AWDSGL) /*!< ADC analog watchdog monitoring of ADC internal channel connected to Temperature sensor, converted by either group regular or injected */
@@ -899,7 +899,7 @@ typedef struct
 /* Literal set to maximum value (refer to device datasheet,                   */
 /* parameter "tSTART").                                                       */
 /* Unit: us                                                                   */
-#define LL_ADC_DELAY_TEMPSENSOR_STAB_US       (10U)  /*!< Delay for internal Voltage reference stabilization time */
+#define LL_ADC_DELAY_TEMPSENSOR_STAB_US       (10U)  /*!< Delay for internal voltage reference stabilization time */
 
 /* Delay required between ADC disable and ADC calibration start.              */
 /* Note: On this STM32 series, before starting a calibration,                  */
@@ -1451,28 +1451,28 @@ typedef struct
 /**
   * @brief  Helper macro to define the ADC conversion data full-scale digital
   *         value corresponding to the selected ADC resolution.
-  * @note   ADC conversion data full-scale corresponds to Voltage range
-  *         determined by analog Voltage references Vref+ and Vref-
+  * @note   ADC conversion data full-scale corresponds to voltage range
+  *         determined by analog voltage references Vref+ and Vref-
   *         (refer to reference manual).
   * @param  __ADC_RESOLUTION__ This parameter can be one of the following values:
   *         @arg @ref LL_ADC_RESOLUTION_12B
-  * @retval ADC conversion data equivalent Voltage value (unit: mVolt)
+  * @retval ADC conversion data equivalent voltage value (unit: mVolt)
   */
 #define __LL_ADC_DIGITAL_SCALE(__ADC_RESOLUTION__)                             \
   (0xFFFU)
 
 
 /**
-  * @brief  Helper macro to calculate the Voltage (unit: mVolt)
+  * @brief  Helper macro to calculate the voltage (unit: mVolt)
   *         corresponding to a ADC conversion data (unit: digital value).
-  * @note   Analog reference Voltage (Vref+) must be known from
+  * @note   Analog reference voltage (Vref+) must be known from
   *         user board environment or can be calculated using ADC measurement.
-  * @param  __VREFANALOG_VOLTAGE__ Analog reference Voltage (unit: mV)
+  * @param  __VREFANALOG_VOLTAGE__ Analog reference voltage (unit: mV)
   * @param  __ADC_DATA__ ADC conversion data (resolution 12 bits)
   *                       (unit: digital value).
   * @param  __ADC_RESOLUTION__ This parameter can be one of the following values:
   *         @arg @ref LL_ADC_RESOLUTION_12B
-  * @retval ADC conversion data equivalent Voltage value (unit: mVolt)
+  * @retval ADC conversion data equivalent voltage value (unit: mVolt)
   */
 #define __LL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__,\
                                       __ADC_DATA__,\
@@ -1503,21 +1503,21 @@ typedef struct
   *                  on this device (presence of macro __LL_ADC_CALC_TEMPERATURE()),
   *                  temperature calculation will be more accurate using
   *                  helper macro @ref __LL_ADC_CALC_TEMPERATURE().
-  * @note   As calculation input, the analog reference Voltage (Vref+) must be
-  *         defined as it impacts the ADC LSB equivalent Voltage.
-  * @note   Analog reference Voltage (Vref+) must be known from
+  * @note   As calculation input, the analog reference voltage (Vref+) must be
+  *         defined as it impacts the ADC LSB equivalent voltage.
+  * @note   Analog reference voltage (Vref+) must be known from
   *         user board environment or can be calculated using ADC measurement.
   * @note   ADC measurement data must correspond to a resolution of 12bits
   *         (full scale digital value 4095). If not the case, the data must be
   *         preliminarily rescaled to an equivalent resolution of 12 bits.
   * @param  __TEMPSENSOR_TYP_AVGSLOPE__   Device datasheet data: Temperature sensor slope typical value (unit: uV/DegCelsius).
   *                                       On STM32F1, refer to device datasheet parameter "Avg_Slope".
-  * @param  __TEMPSENSOR_TYP_CALX_V__     Device datasheet data: Temperature sensor Voltage typical value (at temperature and Vref+ defined in parameters below) (unit: mV).
+  * @param  __TEMPSENSOR_TYP_CALX_V__     Device datasheet data: Temperature sensor voltage typical value (at temperature and Vref+ defined in parameters below) (unit: mV).
   *                                       On STM32F1, refer to device datasheet parameter "V25".
-  * @param  __TEMPSENSOR_CALX_TEMP__      Device datasheet data: Temperature at which temperature sensor Voltage (see parameter above) is corresponding (unit: mV)
-  * @param  __VREFANALOG_VOLTAGE__        Analog Voltage reference (Vref+) Voltage (unit: mV)
+  * @param  __TEMPSENSOR_CALX_TEMP__      Device datasheet data: Temperature at which temperature sensor voltage (see parameter above) is corresponding (unit: mV)
+  * @param  __VREFANALOG_VOLTAGE__        Analog voltage reference (Vref+) voltage (unit: mV)
   * @param  __TEMPSENSOR_ADC_DATA__       ADC conversion data of internal temperature sensor (unit: digital value).
-  * @param  __ADC_RESOLUTION__            ADC resolution at which internal temperature sensor Voltage has been measured.
+  * @param  __ADC_RESOLUTION__            ADC resolution at which internal temperature sensor voltage has been measured.
   *         This parameter can be one of the following values:
   *         @arg @ref LL_ADC_RESOLUTION_12B
   * @retval Temperature (unit: degree Celsius)
@@ -1638,7 +1638,7 @@ __STATIC_INLINE uint32_t LL_ADC_DMA_GetRegAddr(ADC_TypeDef *ADCx, uint32_t Regis
   *                   LL_ADC_PATH_INTERNAL_TEMPSENSOR)
   * @note   Stabilization time of measurement path to internal channel:
   *         After enabling internal paths, before starting ADC conversion,
-  *         a delay is required for internal Voltage reference and
+  *         a delay is required for internal voltage reference and
   *         temperature sensor stabilization time.
   *         Refer to device datasheet.
   *         Refer to literal @ref LL_ADC_DELAY_TEMPSENSOR_STAB_US.

@@ -208,9 +208,23 @@ CMakeFiles/Balance_Car.elf.dir/Core/Src/tim.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/Core/Src/tim.c.s"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Src\tim.c -o CMakeFiles\Balance_Car.elf.dir\Core\Src\tim.c.s
 
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Src/usart.c
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Core\Src\usart.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Core\Src\usart.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Src\usart.c
+
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.i"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Src\usart.c > CMakeFiles\Balance_Car.elf.dir\Core\Src\usart.c.i
+
+CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.s"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Src\usart.c -o CMakeFiles\Balance_Car.elf.dir\Core\Src\usart.c.s
+
 CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Core/Startup/startup_stm32f103c8tx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building ASM object CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building ASM object CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\Balance_Car.elf.dir\Core\Startup\startup_stm32f103c8tx.s.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Startup\startup_stm32f103c8tx.s
 
 CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.i: cmake_force
@@ -224,7 +238,7 @@ CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.s: cmake_for
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.i: cmake_force
@@ -238,7 +252,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.i: cmake_force
@@ -252,7 +266,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ad
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc_ex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc_ex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc_ex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c.i: cmake_force
@@ -266,7 +280,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ad
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c.i: cmake_force
@@ -280,7 +294,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_co
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c.i: cmake_force
@@ -294,7 +308,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dm
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_exti.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c.i: cmake_force
@@ -308,7 +322,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ex
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c.i: cmake_force
@@ -322,7 +336,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_fl
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_flash_ex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c.i: cmake_force
@@ -336,7 +350,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_fl
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c.i: cmake_force
@@ -350,7 +364,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gp
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio_ex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c.i: cmake_force
@@ -364,7 +378,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gp
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c.i: cmake_force
@@ -378,7 +392,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_pwr.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c.i: cmake_force
@@ -392,7 +406,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pw
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c.i: cmake_force
@@ -406,7 +420,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rc
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.i: cmake_force
@@ -420,7 +434,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rc
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.i: cmake_force
@@ -434,7 +448,7 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ti
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c
 
 CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.i: cmake_force
@@ -445,10 +459,24 @@ CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_ti
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.s"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_tim_ex.c.s
 
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c
+
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.i"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c > CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c.i
+
+CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.s"
+	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c -o CMakeFiles\Balance_Car.elf.dir\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c.s
+
 CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/user_main/user_main.c
 CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj -MF CMakeFiles\Balance_Car.elf.dir\user_main\user_main.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\user_main\user_main.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\user_main\user_main.c
 
 CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.i: cmake_force
@@ -462,7 +490,7 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/OLED/Src/driver_ssd1306.c
 CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj -MF CMakeFiles\Balance_Car.elf.dir\OLED\Src\driver_ssd1306.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\OLED\Src\driver_ssd1306.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\OLED\Src\driver_ssd1306.c
 
 CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.i: cmake_force
@@ -476,7 +504,7 @@ CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/Delay/delay.c
 CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj -MF CMakeFiles\Balance_Car.elf.dir\Delay\delay.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\Delay\delay.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Delay\delay.c
 
 CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.i: cmake_force
@@ -490,7 +518,7 @@ CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/hcsr04/hcsr04.c
 CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.obj -MF CMakeFiles\Balance_Car.elf.dir\hcsr04\hcsr04.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\hcsr04\hcsr04.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\hcsr04\hcsr04.c
 
 CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.i: cmake_force
@@ -504,7 +532,7 @@ CMakeFiles/Balance_Car.elf.dir/hcsr04/hcsr04.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/TB6612FNG/motor.c
 CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.obj -MF CMakeFiles\Balance_Car.elf.dir\TB6612FNG\motor.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\TB6612FNG\motor.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\TB6612FNG\motor.c
 
 CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.i: cmake_force
@@ -518,7 +546,7 @@ CMakeFiles/Balance_Car.elf.dir/TB6612FNG/motor.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/atk_ms6050.c
 CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.obj -MF CMakeFiles\Balance_Car.elf.dir\mpu6050\atk_ms6050.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\mpu6050\atk_ms6050.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050\atk_ms6050.c
 
 CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.i: cmake_force
@@ -532,7 +560,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/atk_ms6050.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu.c
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj -MF CMakeFiles\Balance_Car.elf.dir\mpu6050\inv_mpu.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\mpu6050\inv_mpu.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050\inv_mpu.c
 
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.i: cmake_force
@@ -546,7 +574,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu_dmp_motion_driver.c
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj -MF CMakeFiles\Balance_Car.elf.dir\mpu6050\inv_mpu_dmp_motion_driver.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\mpu6050\inv_mpu_dmp_motion_driver.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050\inv_mpu_dmp_motion_driver.c
 
 CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.i: cmake_force
@@ -560,7 +588,7 @@ CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.s: cmake_forc
 CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/pid/pid.c
 CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj -MF CMakeFiles\Balance_Car.elf.dir\pid\pid.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\pid\pid.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\pid\pid.c
 
 CMakeFiles/Balance_Car.elf.dir/pid/pid.c.i: cmake_force
@@ -574,7 +602,7 @@ CMakeFiles/Balance_Car.elf.dir/pid/pid.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/MultiButton/multi_button.c
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.obj -MF CMakeFiles\Balance_Car.elf.dir\keypad\MultiButton\multi_button.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\keypad\MultiButton\multi_button.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\MultiButton\multi_button.c
 
 CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.i: cmake_force
@@ -588,7 +616,7 @@ CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.c.s: cmake_force
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: CMakeFiles/Balance_Car.elf.dir/flags.make
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/button_port/button_port.c
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj: CMakeFiles/Balance_Car.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj"
 	"D:\Arm GNU Toolchain arm-none-eabi\12.2 rel1\bin\arm-none-eabi-gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj -MF CMakeFiles\Balance_Car.elf.dir\keypad\button_port\button_port.c.obj.d -o CMakeFiles\Balance_Car.elf.dir\keypad\button_port\button_port.c.obj -c D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\button_port\button_port.c
 
 CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.i: cmake_force
@@ -611,6 +639,7 @@ Balance_Car_elf_OBJECTS = \
 "CMakeFiles/Balance_Car.elf.dir/Core/Src/sysmem.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Core/Src/system_stm32f1xx.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Core/Src/tim.c.obj" \
+"CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj" \
@@ -628,6 +657,7 @@ Balance_Car_elf_OBJECTS = \
 "CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj" \
+"CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj" \
 "CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj" \
@@ -653,6 +683,7 @@ Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Src/syscalls.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Src/sysmem.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Src/system_stm32f1xx.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Src/tim.c.obj
+Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Src/usart.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Core/Startup/startup_stm32f103c8tx.s.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c.obj
@@ -670,6 +701,7 @@ Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c.obj
+Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/OLED/Src/driver_ssd1306.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/Delay/delay.c.obj
@@ -683,7 +715,7 @@ Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/keypad/MultiButton/multi_button.
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/keypad/button_port/button_port.c.obj
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/build.make
 Balance_Car.elf: CMakeFiles/Balance_Car.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking C executable Balance_Car.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking C executable Balance_Car.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Balance_Car.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/cmake-build-debug/Balance_Car.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/cmake-build-debug/Balance_Car.bin"

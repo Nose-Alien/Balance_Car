@@ -266,7 +266,7 @@ typedef struct
   */
 typedef struct
 {
-  uint32_t OffStateRunMode;      /*!< TIM off state in Run mode, This parameter can be a value of @ref TIM_OSSR_Off_State_Selection_for_Run_mode_state */
+  uint32_t OffStateRunMode;      /*!< TIM off state in run mode, This parameter can be a value of @ref TIM_OSSR_Off_State_Selection_for_Run_mode_state */
 
   uint32_t OffStateIDLEMode;     /*!< TIM off state in IDLE mode, This parameter can be a value of @ref TIM_OSSI_Off_State_Selection_for_Idle_mode_state */
 
