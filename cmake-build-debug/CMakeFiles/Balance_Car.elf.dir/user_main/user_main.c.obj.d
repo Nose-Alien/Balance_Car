@@ -1,11 +1,23 @@
 CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\user_main\user_main.c \
- D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\user_main\user_main.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\stdio.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_ansi.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\newlib.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_newlib_version.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\config.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\machine\ieeefp.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\features.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\cdefs.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\machine\_default_types.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\features.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_newlib_version.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\lib\gcc\arm-none-eabi\12.2.1\include\stddef.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\lib\gcc\arm-none-eabi\12.2.1\include\stdarg.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\reent.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_ansi.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\_types.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\machine\_types.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\lock.h \
+ d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\stdio.h \
+ D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\user_main\user_main.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/main.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Drivers\STM32F1xx_HAL_Driver\Inc/stm32f1xx_hal.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\Core\Inc/stm32f1xx_hal_conf.h \
@@ -51,15 +63,6 @@ CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj: \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\mpu6050/inv_mpu.h \
  D:\STM32xmu\CLION\STM32F103C8T6\Balance_Car\keypad\MultiButton/multi_button.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\string.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_ansi.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\newlib.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\config.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\machine\ieeefp.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\reent.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\_ansi.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\_types.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\machine\_types.h \
- d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\lock.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\_locale.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\strings.h \
  d:\arm\ gnu\ toolchain\ arm-none-eabi\12.2\ rel1\arm-none-eabi\include\sys\string.h \

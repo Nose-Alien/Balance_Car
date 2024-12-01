@@ -5,6 +5,7 @@
   * @date 2024/9/6
   */
 
+#include <stdio.h>
 #include "user_main.h"
 #include "usart.h"
 
@@ -17,11 +18,10 @@ int distance = 0;  // 超声波测距结果
 int8_t distance_sign = 0; //超声波标志位
 int8_t obstacle_sign = 0; //避障标志位
 int mode = 1;  // 模式选择变量
-uint8_t Fore,Back,Left,Right;
+uint8_t Uart_Receive = 0;
 
 #define SPEED_Y 90//俯仰(前后)最大设定速度
 #define SPEED_Z 85//偏航(左右)最大设定速度
-
 
 float Balance_Pwm, Velocity_Pwm;
 float Turn_Pwm;
@@ -56,6 +56,7 @@ _Noreturn void user_main()
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
     __HAL_TIM_MOE_ENABLE(&htim1);
+    HAL_UART_Receive_IT(&huart2, &Uart_Receive, 1);
 
     HAL_TIM_Base_Start_IT(&htim4);
     TouchKey_Init();  // 初始化触摸按键功能
@@ -63,7 +64,7 @@ _Noreturn void user_main()
 
     pid_init(&g_balance_pid, BLC_KP, 0.0f, BLC_KD); // 初始化直立环 PD
 //    pid_init(&g_speed_pid, 0.0f, 0.0f, 0.0f); // 初始化速度环 PID
-    pid_init(&g_turn_pid, TURN_KP, 0.0f, TURN_KD); // 初始化转向环 PD
+//    pid_init(&g_turn_pid, TURN_KP, 0.0f, TURN_KD); // 初始化转向环 PD
     while (1) {
         OLED_Clear(0x00);  // 清空OLED显示屏
         Mode_Oled(mode);    // 显示模式选择
@@ -92,8 +93,11 @@ void Git_Ultrasonic(int8_t sign)
   */
 void Mode_State(int Mode)
 {
-    Target_Speed = 0;
-    Turn_Speed = -2;
+    if (mode == 1) {
+        if(Uart_Receive== 0||Uart_Receive== 90) {
+            Target_Speed = 0, Turn_Speed = 0;
+        }
+    }
     if (Mode == 3) {
         if (obstacle_sign == 1) {
             Target_Speed = -30;
@@ -103,7 +107,7 @@ void Mode_State(int Mode)
             Turn_Speed = -80;
             obstacle_sign = 0;
         } else if (obstacle_sign == 0) {
-            Target_Speed = 10, Turn_Speed = -2;
+            Target_Speed = 20, Turn_Speed = -3;
         }
     }
 }
@@ -112,45 +116,45 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART2)
     {
-        uint8_t Uart_Receive;
         HAL_UART_Receive_IT(&huart2, &Uart_Receive, 1); // 再次使能接收中断
         BluetoothCMD(Uart_Receive); // 处理接收到的数据
     }
 }
-void BluetoothCMD(int Uart_Receive)
+void BluetoothCMD(int uart_Receive)
 {
-    switch(Uart_Receive)
+    switch(uart_Receive)
     {
         case 90://停止 Z
-            Fore=0,Back=0,Left=0,Right=0;
+            Target_Speed = 0, Turn_Speed = 0;
             break;
         case 65://前进 A
-            Fore=1,Back=0,Left=0,Right=0;
+            Target_Speed = 40, Turn_Speed = -3;
             break;
         case 72://左前 H
-            Fore=1,Back=0,Left=1,Right=0;
+            Target_Speed = 40, Turn_Speed = 30;
             break;
         case 66://右前 B
-            Fore=1,Back=0,Left=0,Right=1;
+            Target_Speed = 40, Turn_Speed = -30;
             break;
         case 71://左转 G
-            Fore=0,Back=0,Left=1,Right=0;
+            Turn_Speed = 100;
             break;
         case 67://右转 C
-            Fore=0,Back=0,Left=0,Right=1;
+            Turn_Speed = -100;
             break;
         case 69://后退 E
-            Fore=0,Back=1,Left=0,Right=0;
+            Target_Speed = -40, Turn_Speed = 3;
             break;
         case 70://左后,向右旋 F
-            Fore=0,Back=1,Left=0,Right=1;
+            Target_Speed = -40, Turn_Speed = -30;
             break;
         case 68://右后，向左旋 D
-            Fore=0,Back=1,Left=1,Right=0;
+            Target_Speed = -40, Turn_Speed = 30;
             break;
         default://停止 Z
-            Fore=0,Back=0,Left=0,Right=0;
+            Target_Speed = 0, Turn_Speed = 0;
             break;
+
     }
 }
 
@@ -184,7 +188,7 @@ void Run(void)//10ms工作一次
         if (Turn_Speed < -SPEED_Z) Turn_Speed = -SPEED_Z;
 
         Balance_Pwm = balance_UP(pit, Mechanical_angle, gyr_y);//===直立环PID控制
-        Velocity_Pwm = velocity_UP(Encoder_Left, Encoder_Right * 2, Target_Speed);//===速度环PID控制
+        Velocity_Pwm = velocity_UP(Encoder_Left, Encoder_Right*2 , Target_Speed);//===速度环PID控制
         Turn_Pwm = Turn_UP(gyr_z, Turn_Speed);//===转向环PID控制
         Moto1 = Balance_Pwm - Velocity_Pwm + Turn_Pwm;//===计算左轮电机最终PWM
         Moto2 = Balance_Pwm - Velocity_Pwm - Turn_Pwm;//===计算右轮电机最终PWM
@@ -279,6 +283,7 @@ void Encoder_oled()
     OLED_DrawStr(56, line_3, "R:", MEDIUM, 0);
     OLED_ShowSignedNum(72, line_3, Encoder_Right, MEDIUM, 0);
     OLED_DrawNum(56, line_4, distance, MEDIUM, 0);
+    OLED_DrawNum(56, line_5, Uart_Receive, MEDIUM, 0);
 }
 
 /**************************************************************************
@@ -338,14 +343,6 @@ float velocity_UP(int encoder_left, int encoder_right, float target_Speed)
         Encoder = 0;
     }
 
-//    g_speed_pid.SetPoint = target_Speed;
-//    g_speed_pid.Proportion = velocity_KI;
-//    g_speed_pid.Integral = 0.0f;
-//    g_speed_pid.Derivative = velocity_KP;
-//    Velocity = increment_pid_ctrl(&g_speed_pid,
-//                                  Encoder_Integral,
-//                                  Encoder);
-
     Encoder_Integral = Encoder_Integral - target_Speed;                       //===接收遥控器数据，控制前进后退
     if (Encoder_Integral > 10000) Encoder_Integral = 10000;             //===积分限幅
     if (Encoder_Integral < -10000) Encoder_Integral = -10000;            //===积分限幅
@@ -360,28 +357,28 @@ float velocity_UP(int encoder_left, int encoder_right, float target_Speed)
 返回  值：转向控制PWM
 **************************************************************************/
 
-//float Turn_UP(int gyro_Z, float RC)
-//{
-//    float PWM_out;
-//    if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
-//    else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
-//    PWM_out = Turn_Kd * (float) gyro_Z + Turn_KP * RC;
-//    return PWM_out;
-//}
-
 float Turn_UP(int gyro_Z, float RC)
 {
-    if (RC == 0) {//若无左右转向指令，则开启转向约束
-        Turn_Kd = TURN_KD;
-    }
-    else{
-        Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
-    }
-    g_turn_pid.Derivative = Turn_Kd;
-    return increment_pid_ctrl(&g_turn_pid,
-                              RC,
-                              (float) gyro_Z);;
+    float PWM_out;
+    if (RC == 0)Turn_Kd = TURN_KD;//若无左右转向指令，则开启转向约束
+    else Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+    PWM_out = Turn_Kd * (float) gyro_Z + Turn_KP * RC;
+    return PWM_out;
 }
+
+//float Turn_UP(int gyro_Z, float RC)
+//{
+//    if (RC == 0) {//若无左右转向指令，则开启转向约束
+//        Turn_Kd = TURN_KD;
+//    }
+//    else{
+//        Turn_Kd = 0;//若左右转向指令接收到，则去掉转向约束
+//    }
+//    g_turn_pid.Derivative = Turn_Kd;
+//    return increment_pid_ctrl(&g_turn_pid,
+//                              RC,
+//                              (float) gyro_Z);;
+//}
 
 /**************************************************************************
 函数功能：限制PWM赋值
@@ -422,13 +419,6 @@ void mode_select(int Mode)
     static uint32_t Count = 0;
     switch (Mode) {
         case 1: {//蓝牙模式
-            if((Fore==0)&&(Back==0))Target_Speed=0;//未接受到前进后退指令-->速度清零，稳在原地
-            if(Fore==1)Target_Speed+=1;//前进1标志位拉高-->需要前进
-            if(Back==1)Target_Speed-=1;
-            /*左右*/
-            if((Left==0)&&(Right==0))Turn_Speed=0;
-            if(Left==1)Turn_Speed-=10;//左转
-            if(Right==1)Turn_Speed+=10;//右转
         }
             break;
 //        case 2:  //NRF24L01模式
@@ -442,7 +432,7 @@ void mode_select(int Mode)
 //            break;
 
         case 3: {//避障模式
-            if (distance <= 40) obstacle_sign = obstacle_sign == 0 ? 1 : 0;
+            if (distance <= 50) obstacle_sign = obstacle_sign == 0 ? 1 : 0;
             break;
         }
         default: {

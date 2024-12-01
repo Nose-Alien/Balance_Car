@@ -36,6 +36,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/pid"
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/button_port"
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/keypad/MultiButton"
+  "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/uart"
   )
 
 # The set of dependency files which are needed:
@@ -78,6 +79,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu.c" "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj" "gcc" "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu.c.obj.d"
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/mpu6050/inv_mpu_dmp_motion_driver.c" "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj" "gcc" "CMakeFiles/Balance_Car.elf.dir/mpu6050/inv_mpu_dmp_motion_driver.c.obj.d"
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/pid/pid.c" "CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj" "gcc" "CMakeFiles/Balance_Car.elf.dir/pid/pid.c.obj.d"
+  "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/uart/driver_uart.c" "CMakeFiles/Balance_Car.elf.dir/uart/driver_uart.c.obj" "gcc" "CMakeFiles/Balance_Car.elf.dir/uart/driver_uart.c.obj.d"
   "D:/STM32xmu/CLION/STM32F103C8T6/Balance_Car/user_main/user_main.c" "CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj" "gcc" "CMakeFiles/Balance_Car.elf.dir/user_main/user_main.c.obj.d"
   )
 

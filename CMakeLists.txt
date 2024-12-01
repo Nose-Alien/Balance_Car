@@ -91,6 +91,7 @@ target_sources(${PROJECT_NAME}.elf
 
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton/multi_button.c
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port/button_port.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/uart/driver_uart.c
 
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/user_main/user_main.h
@@ -113,6 +114,7 @@ target_sources(${PROJECT_NAME}.elf
 
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton/multi_button.h
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port/button_port.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/uart/driver_uart.h
 
 )
 
@@ -131,6 +133,7 @@ target_include_directories(${PROJECT_NAME}.elf
 
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/button_port
         ${CMAKE_CURRENT_SOURCE_DIR}/keypad/MultiButton
+        ${CMAKE_CURRENT_SOURCE_DIR}/uart
 )
 target_link_options(${PROJECT_NAME}.elf
     PRIVATE

@@ -1048,6 +1048,30 @@ pid/pid.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/pid/pid.c.s
 .PHONY : pid/pid.c.s
 
+uart/driver_uart.obj: uart/driver_uart.c.obj
+.PHONY : uart/driver_uart.obj
+
+# target to build an object file
+uart/driver_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/uart/driver_uart.c.obj
+.PHONY : uart/driver_uart.c.obj
+
+uart/driver_uart.i: uart/driver_uart.c.i
+.PHONY : uart/driver_uart.i
+
+# target to preprocess a source file
+uart/driver_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/uart/driver_uart.c.i
+.PHONY : uart/driver_uart.c.i
+
+uart/driver_uart.s: uart/driver_uart.c.s
+.PHONY : uart/driver_uart.s
+
+# target to generate assembly for a file
+uart/driver_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Balance_Car.elf.dir\build.make CMakeFiles/Balance_Car.elf.dir/uart/driver_uart.c.s
+.PHONY : uart/driver_uart.c.s
+
 user_main/user_main.obj: user_main/user_main.c.obj
 .PHONY : user_main/user_main.obj
 
@@ -1196,6 +1220,9 @@ help:
 	@echo ... pid/pid.obj
 	@echo ... pid/pid.i
 	@echo ... pid/pid.s
+	@echo ... uart/driver_uart.obj
+	@echo ... uart/driver_uart.i
+	@echo ... uart/driver_uart.s
 	@echo ... user_main/user_main.obj
 	@echo ... user_main/user_main.i
 	@echo ... user_main/user_main.s
